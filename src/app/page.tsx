@@ -57,7 +57,7 @@ export default function Home() {
               <li>Website copy with SEO structure for home, about, and service pages.</li>
               <li>Pitch decks and investor one-pagers with clear narrative logic.</li>
               <li>Video scripts for commercials, explainers, and product demos.</li>
-              <li>Brand voice and messaging guidelines with do's and don'ts.</li>
+              <li>Brand voice and messaging guidelines with do&apos;s and don&apos;ts.</li>
             </ul>
           </div>
           <div className="rounded-lg border border-[color:var(--sand)] p-5">
@@ -109,7 +109,7 @@ export default function Home() {
       <div className="mx-auto max-w-6xl px-4 py-16 text-center">
         <h2 className="text-2xl font-serif mb-4">Start the Conversation.</h2>
         <p className="text-foreground/80 max-w-2xl mx-auto">
-          Our intake process is designed to capture all project specifications upfront to ensure a smooth, efficient engagement. Let's begin.
+          Our intake process is designed to capture all project specifications upfront to ensure a smooth, efficient engagement. Let&apos;s begin.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <a href="/packages" className="rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90">View Packages</a>
