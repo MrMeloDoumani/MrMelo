@@ -70,3 +70,56 @@ body, p, a, li, input, textarea, button {
 .divider-sand {
   background-color: var(--sand);
 }
+
+/* Hero fade and vignette helpers */
+.fade-bottom {
+  position: relative;
+}
+
+.fade-bottom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%);
+}
+
+/* Animated accent divider */
+.divider-animate {
+  height: 1px;
+  background: var(--accent);
+  width: 0;
+  animation: divider-grow 900ms ease-out forwards;
+}
+
+@keyframes divider-grow {
+  from { width: 0; opacity: 0; }
+  to { width: 10rem; opacity: 1; }
+}
+
+/* Subtle icon hover */
+.icon-card {
+  transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
+}
+.icon-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 50%, var(--sand));
+}
+.icon {
+  transition: transform 200ms ease, color 200ms ease;
+}
+.icon-card:hover .icon { transform: scale(1.05); color: var(--accent); }
+
+/* Button ripple hover */
+.btn-ripple { position: relative; overflow: hidden; isolation: isolate; }
+.btn-ripple::after {
+  content: "";
+  position: absolute; inset: 0; margin: auto; width: 10px; height: 10px;
+  border-radius: 9999px; background: currentColor; opacity: 0; transform: scale(1);
+  transition: transform 450ms ease, opacity 450ms ease;
+  pointer-events: none; filter: blur(6px);
+}
+.btn-ripple:hover::after { opacity: .18; transform: scale(40); }
