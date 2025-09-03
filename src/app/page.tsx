@@ -22,16 +22,25 @@ export default function Home() {
           </div>
         </div>
         <div className="relative aspect-[1/1] md:aspect-[4/3] w-full md:pl-8" style={{ perspective: 1000 }}>
-          <div className="absolute inset-0 will-change-transform" style={{ transform: "translateZ(0)" }}>
-            <Image
-              src="/hero.jpg?v=3"
-              alt="Surreal montage representing Mr.Melo: time, memory, AI, and media"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2"
-              priority
-            />
-          </div>
+          <video
+            className="absolute inset-0 h-full w-full object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2 [@media_(prefers-reduced-motion:_reduce)]:hidden"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/hero/poster.jpg"
+          >
+            <source src="/hero/loop.webm" type="video/webm" />
+            <source src="/hero/loop.mp4" type="video/mp4" />
+          </video>
+          <Image
+            src="/hero/poster.jpg"
+            alt="Hero visual"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2 hidden [@media_(prefers-reduced-motion:_reduce)]:block"
+            priority
+          />
         </div>
       </div>
     </section>
