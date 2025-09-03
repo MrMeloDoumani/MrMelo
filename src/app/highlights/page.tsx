@@ -11,13 +11,13 @@ export default function HighlightsPage() {
 
       <div className="grid gap-8 md:grid-cols-2">
         <article className="space-y-3">
-          <h2 className="font-serif text-xl">Short-form Video — Concept Cut</h2>
+          <h2 className="font-serif text-xl">Short-form Video — Sahara Cut</h2>
           <video
             className="w-full rounded-lg border border-[color:var(--sand)]"
             controls
             preload="metadata"
           >
-            <source src="/work/highlights/ai-video/clip.mp4" type="video/mp4" />
+            <source src="/work/highlights/sahara/clip.mp4" type="video/mp4" />
           </video>
           <p className="text-foreground/80 text-sm">30–60s vertical cut: pacing, captions, and motion titles.</p>
         </article>
@@ -31,7 +31,7 @@ export default function HighlightsPage() {
         <article className="space-y-3">
           <h2 className="font-serif text-xl">Visual — Surreal Still</h2>
           <div className="relative aspect-[1/1] w-full">
-            <Image src="/work/highlights/painting/poster.webp" alt="Surreal concept still" fill className="object-cover rounded-lg border border-[color:var(--sand)]" />
+            <Image src="/work/highlights/painting/poster.jpg" alt="Surreal concept still" fill className="object-cover rounded-lg border border-[color:var(--sand)]" />
           </div>
           <p className="text-foreground/80 text-sm">Concept still: art direction for mood and brand atmosphere.</p>
         </article>
@@ -39,7 +39,7 @@ export default function HighlightsPage() {
         <article className="space-y-3">
           <h2 className="font-serif text-xl">Concept — Layout Study</h2>
           <div className="relative aspect-[4/3] w-full">
-            <Image src="/work/highlights/concept/poster.webp" alt="Layout study" fill className="object-cover rounded-lg border border-[color:var(--sand)]" />
+            <Image src="/work/highlights/concept/poster.jpg" alt="Layout study" fill className="object-cover rounded-lg border border-[color:var(--sand)]" />
           </div>
           <p className="text-foreground/80 text-sm">Composition and typography exploration for campaign frames.</p>
         </article>
