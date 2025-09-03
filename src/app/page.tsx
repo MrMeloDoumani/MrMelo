@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className="relative aspect-[1/1] md:aspect-[4/3] w-full">
           <Image
-            src="/hero.jpg"
+            src="/hero.jpg?v=2"
             alt="Surreal montage representing Mr.Melo: time, memory, AI, and media"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
