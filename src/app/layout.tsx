@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: "/og.jpg",
+        url: `${siteUrl}/opengraph-image`,
         width: 1200,
         height: 630,
         alt: `${siteName} — Media, Code, and Story`,
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} — Media, Code, and Story",
+    title: `${siteName} — Media, Code, and Story`,
     description: siteDescription,
-    images: ["/og.jpg"],
+    images: [`${siteUrl}/opengraph-image`],
   },
   alternates: {
     canonical: siteUrl,
