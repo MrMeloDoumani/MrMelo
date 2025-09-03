@@ -17,7 +17,7 @@ export default function HighlightsPage() {
             controls
             preload="metadata"
           >
-            <source src="/work/highlights/sahara/clip.mp4" type="video/mp4" />
+            <source src="/work/highlights/sahara/clip-720p.mp4" type="video/mp4" />
           </video>
           <p className="text-foreground/80 text-sm">30–60s vertical cut: pacing, captions, and motion titles.</p>
         </article>
