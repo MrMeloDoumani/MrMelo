@@ -1,11 +1,15 @@
 import Image from "next/image";
+import { IconVoice, IconVideo, IconWords, IconPics, IconCode } from "@/components/icons";
 
 export default function Home() {
   return (
     <>
-    <section className="motif-overlay">
+    <section className="relative">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+      <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(60%_60%_at_50%_30%,rgba(0,0,0,0),rgba(0,0,0,0.6))]" />
+
       <div className="mx-auto max-w-6xl px-4 py-20 grid gap-8 md:grid-cols-2 items-center">
-        <div>
+        <div className="relative z-10">
           <h1 className="text-4xl md:text-5xl font-serif tracking-tight">Strategy, Meet Execution.</h1>
           <p className="mt-4 text-foreground/80 max-w-prose">
             MeloStudio is a production and strategy studio delivering clarity and impact for
@@ -17,24 +21,38 @@ export default function Home() {
             <a href="/contact" className="rounded-full border border-[color:var(--sand)] px-5 py-3 text-sm font-medium hover:bg-[color:var(--sand)]/30">Start a Project</a>
           </div>
         </div>
-        <div className="relative aspect-[1/1] md:aspect-[4/3] w-full">
-          <Image
-            src="/hero.jpg?v=2"
-            alt="Surreal montage representing Mr.Melo: time, memory, AI, and media"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover rounded-xl border border-[color:var(--sand)]"
-            priority
-          />
+        <div className="relative aspect-[1/1] md:aspect-[4/3] w-full md:pl-8" style={{ perspective: 1000 }}>
+          <div className="absolute inset-0 will-change-transform" style={{ transform: "translateZ(0)" }}>
+            <Image
+              src="/hero.jpg?v=3"
+              alt="Surreal montage representing Mr.Melo: time, memory, AI, and media"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
+
+    {/* Transitional micro-section */}
     <section>
-      <div className="mx-auto max-w-6xl px-4 py-16">
+      <div className="mx-auto max-w-6xl px-4 py-8 text-center">
+        <p className="text-foreground/80">
+          From concept to execution, our disciplines shape media for brands that want clarity and impact.
+        </p>
+        <div className="mx-auto mt-4 h-px w-40 bg-[color:var(--accent)]" />
+      </div>
+    </section>
+    <section className="relative">
+      <div className="absolute inset-0 bg-black/60 -z-10" />
+      <div className="mx-auto max-w-6xl px-4 py-20">
         <h2 className="text-2xl font-serif mb-6">A Studio of Five Disciplines.</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg border border-[color:var(--sand)] p-5">
-            <h3 className="font-semibold mb-2">Melo Voice</h3>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-lg border border-[color:var(--sand)] p-6 bg-black/40">
+            <div className="mb-3 text-[color:var(--accent)]"><IconVoice /></div>
+            <h3 className="font-serif text-lg mb-2">Melo Voice</h3>
             <ul className="list-disc pl-5 text-foreground/80 space-y-1">
               <li>Commercial and promo voiceover for ads and brand films.</li>
               <li>Narration for explainers, product demos, and tutorials.</li>
@@ -42,8 +60,9 @@ export default function Home() {
               <li>Voice brand kits that define tone, pace, and phrasing rules.</li>
             </ul>
           </div>
-          <div className="rounded-lg border border-[color:var(--sand)] p-5">
-            <h3 className="font-semibold mb-2">Melo Video</h3>
+          <div className="rounded-lg border border-[color:var(--sand)] p-6 bg-black/40">
+            <div className="mb-3 text-[color:var(--accent)]"><IconVideo /></div>
+            <h3 className="font-serif text-lg mb-2">Melo Video</h3>
             <ul className="list-disc pl-5 text-foreground/80 space-y-1">
               <li>AI-assisted video commercials, from concept to final cut.</li>
               <li>Product explainers and app walkthroughs with screens and motion titles.</li>
@@ -51,8 +70,9 @@ export default function Home() {
               <li>Editing, pacing, sound design, and music integration.</li>
             </ul>
           </div>
-          <div className="rounded-lg border border-[color:var(--sand)] p-5">
-            <h3 className="font-semibold mb-2">Melo Words</h3>
+          <div className="rounded-lg border border-[color:var(--sand)] p-6 bg-black/40">
+            <div className="mb-3 text-[color:var(--accent)]"><IconWords /></div>
+            <h3 className="font-serif text-lg mb-2">Melo Words</h3>
             <ul className="list-disc pl-5 text-foreground/80 space-y-1">
               <li>Website copy with SEO structure for home, about, and service pages.</li>
               <li>Pitch decks and investor one-pagers with clear narrative logic.</li>
@@ -60,8 +80,9 @@ export default function Home() {
               <li>Brand voice and messaging guidelines with do&apos;s and don&apos;ts.</li>
             </ul>
           </div>
-          <div className="rounded-lg border border-[color:var(--sand)] p-5">
-            <h3 className="font-semibold mb-2">Melo Pics by Nabil Khalil</h3>
+          <div className="rounded-lg border border-[color:var(--sand)] p-6 bg-black/40">
+            <div className="mb-3 text-[color:var(--accent)]"><IconPics /></div>
+            <h3 className="font-serif text-lg mb-2">Melo Pics by Nabil Khalil</h3>
             <ul className="list-disc pl-5 text-foreground/80 space-y-1">
               <li>Portraits and headshots, available in-studio or on-location.</li>
               <li>Product photography for e-commerce with clean, professional lighting.</li>
@@ -69,8 +90,9 @@ export default function Home() {
               <li>On-site brand asset library days to build a reusable archive of images.</li>
             </ul>
           </div>
-          <div className="rounded-lg border border-[color:var(--sand)] p-5">
-            <h3 className="font-semibold mb-2">Melo Code</h3>
+          <div className="rounded-lg border border-[color:var(--sand)] p-6 bg-black/40">
+            <div className="mb-3 text-[color:var(--accent)]"><IconCode /></div>
+            <h3 className="font-serif text-lg mb-2">Melo Code</h3>
             <ul className="list-disc pl-5 text-foreground/80 space-y-1">
               <li>Custom AI agents for specific roles with private data control.</li>
               <li>Automation workflows in Make or n8n using webhooks and custom logic.</li>
