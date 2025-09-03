@@ -15,7 +15,7 @@ export default function PackagesPage() {
             <li>Five social posts + captioning</li>
             <li>Basic analytics tag plan</li>
           </ul>
-          <div className="mt-4 text-sm text-foreground/70">Indicative: AED 4,500–7,500</div>
+          <div className="mt-4 text-sm text-foreground/70">Indicative: $1,250 to $2,050</div>
         </div>
         <div className="rounded-lg border border-[color:var(--sand)] p-6">
           <h2 className="font-semibold text-lg">Growth</h2>
@@ -26,7 +26,7 @@ export default function PackagesPage() {
             <li>Quarterly photo content day</li>
             <li>Automation support</li>
           </ul>
-          <div className="mt-4 text-sm text-foreground/70">Indicative: AED 12,000–22,000/mo</div>
+          <div className="mt-4 text-sm text-foreground/70">Indicative: $3,250 to $6,000 per month</div>
         </div>
         <div className="rounded-lg border border-[color:var(--sand)] p-6">
           <h2 className="font-semibold text-lg">Elite</h2>
@@ -37,7 +37,7 @@ export default function PackagesPage() {
             <li>Custom AI support agent</li>
             <li>Analytics maturity plan</li>
           </ul>
-          <div className="mt-4 text-sm text-foreground/70">Indicative: AED 35,000–60,000/mo</div>
+          <div className="mt-4 text-sm text-foreground/70">Indicative: $9,550 to $16,350 per month</div>
         </div>
       </div>
 

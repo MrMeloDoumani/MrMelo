@@ -9,8 +9,8 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-serif tracking-tight">Strategy, Meet Execution.</h1>
           <p className="mt-4 text-foreground/80 max-w-prose">
             MeloStudio is a production and strategy studio delivering clarity and impact for
-            businesses and consumers, with a UAE-first positioning. We operate across five
-            integrated branches: Melo Voice, Melo Video, Melo Words, Melo Pics, and Melo Code.
+            businesses and consumers worldwide. We operate across five integrated branches:
+            Melo Voice, Melo Video, Melo Words, Melo Pics, and Melo Code.
           </p>
           <div className="mt-8 flex gap-4">
             <a href="/packages" className="rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90">View Packages</a>
