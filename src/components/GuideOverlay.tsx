@@ -2,12 +2,12 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-const AvatarWalker = dynamic(() => import("@/components/AvatarWalker"), { ssr: false });
+const AudioGuideBar = dynamic(() => import("@/components/AudioGuideBar"), { ssr: false });
 
 export default function GuideOverlay() {
   return (
     <div className="fixed inset-0 z-40 pointer-events-none">
-      <AvatarWalker />
+      <AudioGuideBar />
     </div>
   );
 }
