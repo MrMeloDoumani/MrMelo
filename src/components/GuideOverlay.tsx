@@ -2,12 +2,12 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-const AvatarBubble = dynamic(() => import("@/components/AvatarBubble"), { ssr: false });
+const AvatarWalker = dynamic(() => import("@/components/AvatarWalker"), { ssr: false });
 
 export default function GuideOverlay() {
   return (
     <div className="fixed inset-0 z-40 pointer-events-none">
-      <AvatarBubble />
+      <AvatarWalker />
     </div>
   );
 }

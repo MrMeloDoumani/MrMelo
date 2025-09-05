@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
     <GuideOverlay />
-    <section className="relative fade-bottom">
+    <section id="hero" className="relative fade-bottom">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(60%_60%_at_50%_30%,rgba(0,0,0,0),rgba(0,0,0,0.6))]" />
 
@@ -49,7 +49,7 @@ export default function Home() {
     </section>
 
     {/* Transitional micro-section */}
-    <section>
+    <section id="transition-1">
       <div className="mx-auto max-w-6xl px-4 py-8 text-center">
         <p className="text-foreground/80">
           From concept to execution, our disciplines shape media for brands that want clarity and impact.
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="mx-auto mt-4 divider-animate" />
       </div>
     </section>
-    <section className="relative">
+    <section id="disciplines" className="relative">
       <div className="absolute inset-0 bg-black/60 -z-10" />
       <div className="mx-auto max-w-6xl px-4 py-20">
         <h2 className="text-2xl font-serif mb-6">A Studio of Five Disciplines.</h2>
@@ -116,7 +116,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section>
+    <section id="cta" >
       <div className="mx-auto max-w-6xl px-4 py-16">
         <h2 className="text-2xl font-serif mb-4">Our Discipline. Your Advantage.</h2>
         <p className="text-foreground/80 max-w-prose">
