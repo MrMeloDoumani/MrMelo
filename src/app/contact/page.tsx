@@ -1,5 +1,5 @@
 export default function ContactPage() {
-  const email = "info@melo.com";
+  const email = "info@mrmelo.com";
   const subject = encodeURIComponent("Mr.Melo Inquiry");
   const body = encodeURIComponent("Hi Mr.Melo team,\n\nI'd like to discuss...\n");
   const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
@@ -14,7 +14,7 @@ export default function ContactPage() {
         <a href={`https://compose.mail.yahoo.com/?to=${email}&subject=${subject}&body=${body}`} target="_blank" rel="noopener" className="rounded-md border border-[color:var(--sand)] px-4 py-3 text-sm hover:bg-[color:var(--sand)]/20">Yahoo Mail</a>
       </div>
       <div className="mt-8">
-        <a href={mailto} className="rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90">info@melo.com</a>
+        <a href={mailto} className="rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90">info@mrmelo.com</a>
       </div>
     </section>
   );

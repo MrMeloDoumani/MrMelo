@@ -16,7 +16,7 @@ export default function PackagesPage() {
             <li>Basic analytics tag plan</li>
           </ul>
           <div className="mt-4">
-            <a href="mailto:info@melo.com" className="rounded-full border border-[color:var(--sand)] px-3 py-1 text-sm hover:bg-[color:var(--sand)]/20">info@melo.com</a>
+            <a href="/contact" className="rounded-full border border-[color:var(--sand)] px-3 py-1 text-sm hover:bg-[color:var(--sand)]/20">info@mrmelo.com</a>
           </div>
         </div>
         <div className="rounded-lg border border-[color:var(--sand)] p-6">
@@ -29,7 +29,7 @@ export default function PackagesPage() {
             <li>Automation support</li>
           </ul>
           <div className="mt-4">
-            <a href="mailto:info@melo.com" className="rounded-full border border-[color:var(--sand)] px-3 py-1 text-sm hover:bg-[color:var(--sand)]/20">info@melo.com</a>
+            <a href="/contact" className="rounded-full border border-[color:var(--sand)] px-3 py-1 text-sm hover:bg-[color:var(--sand)]/20">info@mrmelo.com</a>
           </div>
         </div>
         <div className="rounded-lg border border-[color:var(--sand)] p-6">
@@ -42,13 +42,13 @@ export default function PackagesPage() {
             <li>Analytics maturity plan</li>
           </ul>
           <div className="mt-4">
-            <a href="mailto:info@melo.com" className="rounded-full border border-[color:var(--sand)] px-3 py-1 text-sm hover:bg-[color:var(--sand)]/20">info@melo.com</a>
+            <a href="/contact" className="rounded-full border border-[color:var(--sand)] px-3 py-1 text-sm hover:bg-[color:var(--sand)]/20">info@mrmelo.com</a>
           </div>
         </div>
       </div>
 
       <div className="mt-10">
-        <a href="mailto:info@melo.com" className="rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90">info@melo.com</a>
+        <a href="/contact" className="rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90">info@mrmelo.com</a>
       </div>
     </section>
   );

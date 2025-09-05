@@ -10,7 +10,7 @@ const nav = [
   { href: "/services", label: "Services" },
   { href: "/highlights", label: "Highlights" },
   { href: "/packages", label: "Packages" },
-  { href: "/contact", label: "info@melo.com" },
+  { href: "/contact", label: "info@mrmelo.com" },
 ];
 
 export default function Header() {
