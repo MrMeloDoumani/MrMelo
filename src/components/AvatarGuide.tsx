@@ -126,6 +126,9 @@ export function AvatarGuideOverlay() {
   const [segments, setSegments] = useState<SegmentsData | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
+  const [hasAvatar, setHasAvatar] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [sectionLabel, setSectionLabel] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/narration/homepage.visemes.json")
@@ -136,7 +139,32 @@ export function AvatarGuideOverlay() {
       .then((r) => (r.ok ? r.json() : Promise.reject(r.statusText)))
       .then((j) => setSegments(j))
       .catch(() => setSegments({ sections: [], audioDuration: 0 }));
+    // Probe avatar presence to avoid GLTF load errors
+    fetch("/avatar/you.glb", { method: "HEAD" })
+      .then((r) => setHasAvatar(r.ok))
+      .catch(() => setHasAvatar(false));
   }, []);
+
+  // Show CTA 3s after each section boundary
+  useEffect(() => {
+    if (!segments || !audioRef.current) return;
+    const sec = segments.sections;
+    if (!sec || sec.length === 0) return;
+    let lastIdx = -1;
+    const id = window.setInterval(() => {
+      const t = audioRef.current?.currentTime ?? 0;
+      const idx = sec.findIndex((s) => t >= s.start && t < s.end);
+      if (idx !== -1 && idx !== lastIdx) {
+        lastIdx = idx;
+        const label = sec[idx].label;
+        window.setTimeout(() => {
+          setSectionLabel(label);
+          setShowModal(true);
+        }, 3000);
+      }
+    }, 500);
+    return () => window.clearInterval(id);
+  }, [segments]);
 
   useEffect(() => {
     const audio = new Audio("/audio/mrmelo-homepage.mp3");
@@ -155,16 +183,57 @@ export function AvatarGuideOverlay() {
   const duration = segments?.audioDuration || 0;
   const entries = visemeData?.entries || [];
 
+  function MovingPlaceholder({ t, total }: { t: number; total: number }) {
+    const ref = useRef<THREE.Mesh>(null);
+    useFrame(() => {
+      const progress = total > 0 ? clamp01(t / total) : 0;
+      const x = -5 + progress * 10;
+      if (ref.current) {
+        ref.current.position.set(x, 1.2, 0);
+      }
+    });
+    return (
+      <mesh ref={ref}>
+        <sphereGeometry args={[0.4, 24, 24]} />
+        <meshStandardMaterial color="#ffcc66" emissive="#332200" emissiveIntensity={0.3} />
+      </mesh>
+    );
+  }
+
   return (
     <div className="pointer-events-none fixed inset-0 z-40" aria-hidden>
       <Canvas camera={{ position: [0, 1.5, 6], fov: 45 }}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} />
-        {entries.length > 0 && (
+        {entries.length > 0 && hasAvatar ? (
           <AvatarModel audioTime={currentTime} visemes={entries} audioDuration={duration} />
+        ) : (
+          <MovingPlaceholder t={currentTime} total={duration} />
         )}
         <Environment preset="city" />
       </Canvas>
+      {/* Controls and CTA are pointer-active */}
+      <div className="pointer-events-auto fixed bottom-4 right-4 z-50 flex items-center gap-2">
+        <button
+          onClick={() => {
+            const a = audioRef.current; if (!a) return; a.paused ? a.play().catch(()=>{}) : a.pause();
+          }}
+          className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-sm"
+        >
+          Play/Pause
+        </button>
+        <button
+          onClick={() => { const a = audioRef.current; if (!a) return; a.muted = !a.muted; }}
+          className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-sm"
+        >
+          Mute
+        </button>
+      </div>
+      {showModal && (
+        <div className="pointer-events-auto">
+          {require("./SignUpModal").default({ open: true, onClose: () => setShowModal(false), section: sectionLabel })}
+        </div>
+      )}
     </div>
   );
 }

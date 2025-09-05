@@ -34,8 +34,7 @@ export default function Home() {
             playsInline
             poster="/hero/poster.jpg"
           >
-            <source src="/hero/loop.webm" type="video/webm" />
-            <source src="/hero/loop.mp4" type="video/mp4" />
+            <source src="/hero/ai-guide.mp4" type="video/mp4" />
           </video>
           <Image
             src="/hero/poster.jpg"
