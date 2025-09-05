@@ -33,8 +33,8 @@ export default function Home() {
             preload="metadata"
             poster="/hero/poster.jpg"
           >
-            <source src="/hero/ai-guide.webm" type="video/webm" />
-            <source src="/hero/ai-guide.optimized.mp4" type="video/mp4" />
+            <source src="/hero/loop.webm" type="video/webm" />
+            <source src="/hero/loop.mp4" type="video/mp4" />
           </video>
           <Image
             src="/hero/poster.jpg"
