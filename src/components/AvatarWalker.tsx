@@ -115,7 +115,11 @@ export default function AvatarWalker() {
       >
         <div className="relative w-28 h-28 rounded-full border border-[color:var(--sand)] bg-black/70 p-2 shadow-lg">
           <img src="/avatar/guide.png" alt="Guide avatar" className="h-full w-full rounded-full object-cover" />
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-1.5 h-2 rounded-full bg-[color:var(--sand)]" style={{ width: `${Math.max(20, Math.floor(20 + mouth*60))}px` }} />
+          <svg className="absolute left-1/2 bottom-3 -translate-x-1/2" width="52" height="24" viewBox="0 0 52 24" aria-hidden>
+            <path d={`M2,12 C10,${12 - mouth*6} 42,${12 - mouth*6} 50,12 C42,${12 + mouth*6} 10,${12 + mouth*6} 2,12 Z`} fill="rgba(255, 204, 102, 0.85)" stroke="rgba(255, 204, 102, 0.95)" strokeWidth="1" />
+            <path d={`M6,12 C14,${12 - mouth*5} 38,${12 - mouth*5} 46,12 C38,${12 + mouth*5} 14,${12 + mouth*5} 6,12 Z`} fill="rgba(0,0,0,0.75)" />
+            {mouth < 0.25 && (<rect x="8" y="11" width="36" height="2" fill="rgba(255,255,255,0.85)" rx="1" />)}
+          </svg>
         </div>
       </div>
       {/* Start audio CTA (autoplay may be blocked) */}
@@ -129,11 +133,17 @@ export default function AvatarWalker() {
           </button>
         </div>
       )}
-      {/* Controls */}
-      <div className="pointer-events-auto fixed bottom-4 right-4 z-50 flex items-center gap-2">
-        <button onClick={() => { const a = audioRef.current; if (!a) return; a.paused ? a.play().catch(()=>{}) : a.pause(); }} className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-sm">Play/Pause</button>
-        <button onClick={() => { const a = audioRef.current; if (!a) return; a.muted = !a.muted; }} className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-sm">Mute</button>
-      </div>
+      {started && (
+        <div className="pointer-events-auto fixed inset-x-0 bottom-4 z-50 mx-auto w-[min(92vw,680px)] rounded-xl border border-[color:var(--sand)] bg-black/70 p-3 backdrop-blur">
+          <div className="flex items-center gap-3">
+            <button onClick={() => { const a = audioRef.current; if (!a) return; a.paused ? a.play().catch(()=>{}) : a.pause(); }} className="rounded-md border border-[color:var(--sand)] px-3 py-1 text-xs">Play/Pause</button>
+            <button onClick={() => { const a = audioRef.current; if (!a) return; a.muted = !a.muted; }} className="rounded-md border border-[color:var(--sand)] px-3 py-1 text-xs">Mute</button>
+            <button onClick={() => { const a = audioRef.current; if (!a) return; a.playbackRate = a.playbackRate === 1 ? 1.25 : 1; }} className="rounded-md border border-[color:var(--sand)] px-3 py-1 text-xs">Speed 1x/1.25x</button>
+            <div className="flex-1" />
+            <input aria-label="Audio progress" className="w-40 accent-[color:var(--accent)]" type="range" min={0} max={segments?.audioDuration ? Math.ceil(segments.audioDuration) : 100} value={currentTime} onChange={(e) => { const a = audioRef.current; if (!a) return; a.currentTime = Number(e.target.value); setCurrentTime(a.currentTime); }} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
