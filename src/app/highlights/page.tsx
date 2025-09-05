@@ -13,7 +13,7 @@ export default function HighlightsPage() {
         <article className="space-y-3">
           <h2 className="font-serif text-xl">Visual — Selected Still</h2>
           <div className="relative aspect-[16/9] w-full max-w-[560px]">
-            <Image src="/work/highlights/painting/poster.jpg" alt="Selected still" fill className="object-cover rounded-lg border border-[color:var(--sand)]" />
+            <Image src="/work/highlights/selected.png" alt="Selected still" fill className="object-cover rounded-lg border border-[color:var(--sand)]" />
           </div>
         </article>
 
