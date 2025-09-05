@@ -1,3 +1,5 @@
+"use client";
+
 export default function ContactPage() {
   const email = "info@mrmelo.com";
   const subject = encodeURIComponent("Mr.Melo Inquiry");
