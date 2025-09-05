@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { IconVoice, IconVideo, IconWords, IconPics, IconCode } from "@/components/icons";
+import dynamic from "next/dynamic";
+
+const GuideOverlay = dynamic(() => import("@/components/GuideOverlay"), { ssr: false });
 
 export default function Home() {
   return (
     <>
+    <GuideOverlay />
     <section className="relative fade-bottom">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(60%_60%_at_50%_30%,rgba(0,0,0,0),rgba(0,0,0,0.6))]" />
