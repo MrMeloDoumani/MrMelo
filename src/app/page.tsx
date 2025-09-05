@@ -32,9 +32,11 @@ export default function Home() {
             loop
             muted
             playsInline
+            preload="metadata"
             poster="/hero/poster.jpg"
           >
-            <source src="/hero/ai-guide.mp4" type="video/mp4" />
+            <source src="/hero/ai-guide.webm" type="video/webm" />
+            <source src="/hero/ai-guide.optimized.mp4" type="video/mp4" />
           </video>
           <Image
             src="/hero/poster.jpg"
