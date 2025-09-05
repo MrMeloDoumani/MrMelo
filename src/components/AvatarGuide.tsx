@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import SignUpModal from "@/components/SignUpModal";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
@@ -231,7 +232,7 @@ export function AvatarGuideOverlay() {
       </div>
       {showModal && (
         <div className="pointer-events-auto">
-          {require("./SignUpModal").default({ open: true, onClose: () => setShowModal(false), section: sectionLabel })}
+          <SignUpModal open={true} onClose={() => setShowModal(false)} section={sectionLabel} />
         </div>
       )}
     </div>

@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { IconVoice, IconVideo, IconWords, IconPics, IconCode } from "@/components/icons";
-import dynamic from "next/dynamic";
-
-const GuideOverlay = dynamic(() => import("@/components/GuideOverlay"), { ssr: false });
+import GuideOverlay from "@/components/GuideOverlay";
 
 export default function Home() {
   return (
