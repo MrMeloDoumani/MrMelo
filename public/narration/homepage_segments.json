@@ -1,0 +1,71 @@
+{
+  "sections": [
+    {
+      "id": "hero",
+      "label": "Hero",
+      "start": 0,
+      "end": 36.6
+    },
+    {
+      "id": "disciplines_intro",
+      "label": "Disciplines Intro",
+      "start": 36.6,
+      "end": 68.04
+    },
+    {
+      "id": "melo_voice",
+      "label": "Melo Voice",
+      "start": 68.04,
+      "end": 91.39999999999999
+    },
+    {
+      "id": "melo_video",
+      "label": "Melo Video",
+      "start": 91.39999999999999,
+      "end": 114.84
+    },
+    {
+      "id": "melo_words",
+      "label": "Melo Words",
+      "start": 114.84,
+      "end": 143.52
+    },
+    {
+      "id": "melo_pics",
+      "label": "Melo Pics",
+      "start": 143.52,
+      "end": 174.88
+    },
+    {
+      "id": "melo_code",
+      "label": "Melo Code",
+      "start": 174.88,
+      "end": 222.88
+    },
+    {
+      "id": "productized_services",
+      "label": "Productized Services",
+      "start": 222.88,
+      "end": 232.84
+    },
+    {
+      "id": "automated_production",
+      "label": "Automated Production",
+      "start": 232.84,
+      "end": 253.24
+    },
+    {
+      "id": "rigorous_qa",
+      "label": "Rigorous QA",
+      "start": 253.24,
+      "end": 304.16
+    },
+    {
+      "id": "cta_start_conversation",
+      "label": "Start the Conversation",
+      "start": 304.16,
+      "end": 324.44
+    }
+  ],
+  "audioDuration": 324.44
+}
