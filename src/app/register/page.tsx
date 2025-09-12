@@ -126,7 +126,7 @@ export default function Register() {
               {generatePassword(formData.lastName, formData.birthYear)}
             </div>
             <p className="text-sm text-foreground/60">
-              Keep this code safe - you'll need it to access the archive.
+              Keep this code safe - you&apos;ll need it to access the archive.
             </p>
           </div>
 

@@ -345,11 +345,16 @@ export default function ConfidentialArchive() {
               >
                 Start with Deep Diver - $35/month
               </a>
-              <Link 
+              <Link
                 href="/contact"
                 className="btn-ripple rounded-full border border-[color:var(--sand)] px-8 py-4 text-lg font-medium hover:bg-[color:var(--sand)]/30"
               >
-                Discuss Custom Access</a></div><div className="flex flex-col sm:flex-row gap-4 justify-center mt-4"><Link href="/register" className="btn-ripple rounded-full border border-[color:var(--sand)] px-8 py-4 text-lg font-medium hover:bg-[color:var(--sand)]/30">Start Registration Process</Link></div>
+                Discuss Custom Access
+              </Link>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+              <Link href="/register" className="btn-ripple rounded-full border border-[color:var(--sand)] px-8 py-4 text-lg font-medium hover:bg-[color:var(--sand)]/30">
+                Start Registration Process
               </Link>
             </div>
           </div>
@@ -496,12 +501,26 @@ export default function ConfidentialArchive() {
             >
               Start with Deep Diver - $35/month
             </a>
-            <Link 
+            <Link
               href="/contact"
               className="btn-ripple rounded-full border border-[color:var(--sand)] px-8 py-4 text-lg font-medium hover:bg-[color:var(--sand)]/30"
             >
-              Have Questions?</Link></div></div><div className="text-center mt-12"><div className="bg-black/20 rounded-lg p-8"><h2 className="text-2xl font-serif mb-4">Ready to Get Started?</h2><p className="text-foreground/80 mb-6 max-w-2xl mx-auto">Join the exclusive community with access to my personal archive of insights and creative work. Get your personalized access code in under 2 minutes.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link href="/register" className="btn-ripple rounded-full bg-[color:var(--accent)] text-black px-8 py-4 text-lg font-medium hover:opacity-90">Create Your Access Code</Link></div></div></div>
+              Have Questions?
             </Link>
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <div className="bg-black/20 rounded-lg p-8">
+            <h2 className="text-2xl font-serif mb-4">Ready to Get Started?</h2>
+            <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
+              Join the exclusive community with access to my personal archive of insights and creative work. Get your personalized access code in under 2 minutes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/register" className="btn-ripple rounded-full bg-[color:var(--accent)] text-black px-8 py-4 text-lg font-medium hover:opacity-90">
+                Create Your Access Code
+              </Link>
+            </div>
           </div>
         </div>
       </section>

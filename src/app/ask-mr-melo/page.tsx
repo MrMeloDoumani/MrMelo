@@ -207,11 +207,11 @@ const TIERS = {
 };
 
 export default function AskMrMeloPage() {
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [responses, setResponses] = useState({});
   const [currentStep, setCurrentStep] = useState('selection');
 
-  const toggleCategory = (categoryId) => {
+  const toggleCategory = (categoryId: string) => {
     setSelectedCategories(prev =>
       prev.includes(categoryId)
         ? prev.filter(id => id !== categoryId)
@@ -219,7 +219,7 @@ export default function AskMrMeloPage() {
     );
   };
 
-  const handleResponseChange = (categoryId, promptIndex, value) => {
+  const handleResponseChange = (categoryId: string, promptIndex: number, value: string) => {
     setResponses(prev => ({
       ...prev,
       [`${categoryId}-${promptIndex}`]: value
@@ -236,6 +236,8 @@ export default function AskMrMeloPage() {
 
     selectedCategories.forEach(categoryId => {
       const category = CATEGORIES.find(c => c.id === categoryId);
+      if (!category) return;
+
       emailBody += `${category.icon} ${category.name}\n`;
 
       category.prompts.forEach((prompt, index) => {
@@ -268,7 +270,7 @@ export default function AskMrMeloPage() {
             <div className="text-6xl mb-6">🎯</div>
             <h1 className="text-4xl font-bold mb-4">Request Sent!</h1>
             <p className="text-xl text-gray-300 mb-8">
-              Your personalized questions have been sent. I'll craft responses that speak directly to what you asked.
+              Your personalized questions have been sent. I&apos;ll craft responses that speak directly to what you asked.
             </p>
           </div>
 
@@ -290,7 +292,7 @@ export default function AskMrMeloPage() {
               <div className="flex items-start">
                 <div className="text-yellow-400 mr-3">✅</div>
                 <div>
-                  <strong>Response time</strong> - Within your tier's SLA
+                  <strong>Response time</strong> - Within your tier&apos;s SLA
                 </div>
               </div>
               <div className="flex items-start">
@@ -331,7 +333,7 @@ export default function AskMrMeloPage() {
               Ask Mr. Melo
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Choose the topics you want to explore, then tell me what you'd like to know. I'll create personalized content that answers your specific questions.
+              Choose the topics you want to explore, then tell me what you&apos;d like to know. I&apos;ll create personalized content that answers your specific questions.
             </p>
 
             {/* Authenticity Guarantee */}
