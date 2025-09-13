@@ -137,7 +137,7 @@ export default function AvatarWalker() {
       {started && (
         <div className="pointer-events-auto fixed inset-x-0 bottom-4 z-50 mx-auto w-[min(92vw,680px)] rounded-xl border border-[color:var(--sand)] bg-black/70 p-3 backdrop-blur">
           <div className="flex items-center gap-3">
-            <button onClick={() => { const a = audioRef.current; if (!a) return; a.paused ? a.play().catch(()=>{}) : a.pause(); }} className="rounded-md border border-[color:var(--sand)] px-3 py-1 text-xs">Play/Pause</button>
+            <button onClick={() => { const a = audioRef.current; if (!a) return; if (a.paused) { a.play().catch(()=>{}); } else { a.pause(); } }} className="rounded-md border border-[color:var(--sand)] px-3 py-1 text-xs">Play/Pause</button>
             <button onClick={() => { const a = audioRef.current; if (!a) return; a.muted = !a.muted; }} className="rounded-md border border-[color:var(--sand)] px-3 py-1 text-xs">Mute</button>
             <button onClick={() => { const a = audioRef.current; if (!a) return; a.playbackRate = a.playbackRate === 1 ? 1.25 : 1; }} className="rounded-md border border-[color:var(--sand)] px-3 py-1 text-xs">Speed 1x/1.25x</button>
             <div className="flex-1" />

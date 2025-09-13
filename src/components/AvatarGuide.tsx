@@ -217,7 +217,7 @@ export function AvatarGuideOverlay() {
       <div className="pointer-events-auto fixed bottom-4 right-4 z-50 flex items-center gap-2">
         <button
           onClick={() => {
-            const a = audioRef.current; if (!a) return; a.paused ? a.play().catch(()=>{}) : a.pause();
+            const a = audioRef.current; if (!a) return; if (a.paused) { a.play().catch(()=>{}); } else { a.pause(); }
           }}
           className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-sm"
         >

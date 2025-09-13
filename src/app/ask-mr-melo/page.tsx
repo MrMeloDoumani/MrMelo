@@ -211,7 +211,6 @@ const TIERS = {
 };
 
 export default function AskMrMeloPage() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [selectedTier, setSelectedTier] = useState<string>('basic');
   const [selectedFormats, setSelectedFormats] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -223,12 +222,10 @@ export default function AskMrMeloPage() {
     // For demo purposes, we'll simulate authentication after a short delay
     // In real app, check if user is logged in
     const timer = setTimeout(() => {
-      if (!isAuthenticated) {
-        setCurrentStep('auth');
-      }
+      setCurrentStep('auth');
     }, 100);
     return () => clearTimeout(timer);
-  }, [isAuthenticated]);
+  }, []);
 
   const toggleCategory = (categoryId: string) => {
     setSelectedCategories(prev =>

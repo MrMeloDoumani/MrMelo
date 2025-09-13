@@ -64,7 +64,7 @@ export function AvatarBubble() {
       <div className="max-w-xs rounded-xl border border-[color:var(--sand)] bg-black/70 p-3 text-sm">
         <p className="opacity-80">I’ll walk you through the page. Use play/pause or mute anytime.</p>
         <div className="mt-2 flex gap-2">
-          <button onClick={() => { const a = audioRef.current; if (!a) return; a.paused ? a.play().catch(()=>{}) : a.pause(); }} className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-xs">Play/Pause</button>
+          <button onClick={() => { const a = audioRef.current; if (!a) return; if (a.paused) { a.play().catch(()=>{}); } else { a.pause(); } }} className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-xs">Play/Pause</button>
           <button onClick={() => { const a = audioRef.current; if (!a) return; a.muted = !a.muted; }} className="rounded-full border border-[color:var(--sand)] bg-black/70 px-3 py-1 text-xs">Mute</button>
         </div>
       </div>

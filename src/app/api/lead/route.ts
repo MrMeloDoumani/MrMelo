@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     // Minimal: log to Vercel function logs; swap to Supabase later
     console.log("lead", body);
     return NextResponse.json({ ok: true });
-  } catch (e) {
+  } catch (_e) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 }
