@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 const CATEGORIES = [
@@ -207,9 +207,24 @@ const TIERS = {
 };
 
 export default function AskMrMeloPage() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<string>('basic');
+  const [selectedFormats, setSelectedFormats] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [responses, setResponses] = useState<Record<string, string>>({});
-  const [currentStep, setCurrentStep] = useState('selection');
+  const [currentStep, setCurrentStep] = useState('auth');
+
+  // Simulate user signup for demo - in real app, this would check authentication
+  useEffect(() => {
+    // For demo purposes, we'll simulate authentication after a short delay
+    // In real app, check if user is logged in
+    const timer = setTimeout(() => {
+      if (!isAuthenticated) {
+        setCurrentStep('auth');
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [isAuthenticated]);
 
   const toggleCategory = (categoryId: string) => {
     setSelectedCategories(prev =>
@@ -226,12 +241,23 @@ export default function AskMrMeloPage() {
     }));
   };
 
+  const handleTierSelect = (tierId: string) => {
+    setSelectedTier(tierId);
+    setSelectedFormats(TIERS[tierId as keyof typeof TIERS].formats);
+    setCurrentStep('categories');
+  };
+
+  const handleSignup = () => {
+    setIsAuthenticated(true);
+    setCurrentStep('tier-selection');
+  };
+
   const generateRequestEmail = () => {
-    const userTier = 'basic'; // Default tier, can be made dynamic
-    const tier = TIERS[userTier];
+    const tier = TIERS[selectedTier as keyof typeof TIERS];
 
     let emailBody = `Personalized Content Request from Valued Member\n\n`;
-    emailBody += `Tier: ${tier.name}\n\n`;
+    emailBody += `Tier: ${tier.name}\n`;
+    emailBody += `Selected Formats: ${selectedFormats.join(', ')}\n\n`;
     emailBody += 'CONTENT REQUEST DETAILS:\n\n';
 
     selectedCategories.forEach(categoryId => {
@@ -311,6 +337,126 @@ export default function AskMrMeloPage() {
             >
               View Highlights →
             </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Authentication step
+  if (currentStep === 'auth') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="text-6xl mb-6">🔐</div>
+            <h1 className="text-4xl font-serif mb-6 text-white">Access Required</h1>
+            <p className="text-xl text-gray-300 mb-8">
+              To request personalized content from Mr. Melo, you need to be a registered member.
+              Sign up now to unlock premium insights and direct responses.
+            </p>
+
+            <div className="bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 mb-8">
+              <h2 className="text-2xl font-semibold mb-4 text-white">What You Get:</h2>
+              <div className="grid md:grid-cols-3 gap-4 text-left">
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🎯</div>
+                  <h3 className="font-semibold text-white">Direct Access</h3>
+                  <p className="text-sm text-gray-300">Personal responses from Mr. Melo</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">⚡</div>
+                  <h3 className="font-semibold text-white">Fast Responses</h3>
+                  <p className="text-sm text-gray-300">24-48 hour turnaround</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🎨</div>
+                  <h3 className="font-semibold text-white">Multiple Formats</h3>
+                  <p className="text-sm text-gray-300">Text, Audio, Video options</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/hkm"
+                className="btn-ripple rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 text-lg font-semibold hover:opacity-90 transition-all"
+              >
+                Sign Up Now - Start Journey
+              </Link>
+              <Link
+                href="/faq"
+                className="btn-ripple rounded-full border border-slate-600 text-white px-8 py-4 text-lg font-semibold hover:bg-slate-800 transition-all"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Tier selection step
+  if (currentStep === 'tier-selection') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="text-6xl mb-6">📊</div>
+              <h1 className="text-4xl font-serif mb-6 text-white">Choose Your Access Tier</h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Select the tier that best fits your needs. Each tier includes different response formats and priority levels.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {Object.entries(TIERS).map(([tierId, tier]) => (
+                <div
+                  key={tierId}
+                  className={`bg-black/20 backdrop-blur-sm rounded-2xl p-8 border transition-all cursor-pointer hover:scale-105 ${
+                    selectedTier === tierId
+                      ? 'border-red-500 bg-red-500/10'
+                      : 'border-slate-700 hover:border-slate-600'
+                  }`}
+                  onClick={() => handleTierSelect(tierId)}
+                >
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-semibold mb-2 text-white">{tier.name}</h3>
+                    <div className="text-3xl font-bold text-red-400 mb-2">{tier.price}</div>
+                    <div className="text-sm text-gray-400">{tier.responseTime} response</div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3 text-white">Response Formats:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {tier.formats.map((format, index) => (
+                        <span key={index} className="bg-slate-700 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          {format}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {selectedTier === tierId && (
+                    <div className="text-center">
+                      <div className="text-green-400 text-sm font-semibold">✓ Selected</div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <button
+                onClick={() => setCurrentStep('categories')}
+                disabled={!selectedTier}
+                className="btn-ripple rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 text-lg font-semibold hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Continue to Topic Selection →
+              </button>
+            </div>
           </div>
         </div>
       </div>
