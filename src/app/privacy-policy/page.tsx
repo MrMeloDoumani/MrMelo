@@ -154,7 +154,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="bg-slate-800 p-4 rounded-lg">
                 <p className="text-gray-300">
-                  <strong>Email:</strong> privacy@mrmelo.com<br />
+                  <strong>Email:</strong> legal@mrmelo.com<br />
                   <strong>Address:</strong> [Your Business Address]<br />
                   <strong>Phone:</strong> [Your Phone Number]
                 </p>

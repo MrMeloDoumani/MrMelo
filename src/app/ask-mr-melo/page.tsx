@@ -190,21 +190,21 @@ const TIERS = {
   basic: {
     name: 'Basic Access',
     price: '$15/month',
-    email: 'basic@mrmelo.com',
+    email: 'support@mrmelo.com',
     responseTime: '48 hours',
     formats: ['📝 Text']
   },
   deepDiver: {
     name: 'Deep Diver',
     price: '$35/month',
-    email: 'deepdiver@mrmelo.com',
+    email: 'support@mrmelo.com',
     responseTime: '36 hours',
     formats: ['📝 Text', '🎧 Audio']
   },
   archiveMaster: {
     name: 'Archive Master',
     price: '$65/month',
-    email: 'archivemaster@mrmelo.com',
+    email: 'support@mrmelo.com',
     responseTime: '24 hours',
     formats: ['📝 Text', '🎧 Audio', '🎬 Video']
   }

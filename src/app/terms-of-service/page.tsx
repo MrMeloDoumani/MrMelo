@@ -66,7 +66,7 @@ export default function TermsOfService() {
                   <p><strong>Age Restrictions:</strong> Minimum age 18 years old</p>
                   <p><strong>Prohibited Uses:</strong> No illegal activities, harassment, or commercial redistribution</p>
                   <p><strong>Service Provider:</strong> MrMelo (Sole Proprietorship) - United States</p>
-                  <p><strong>Contact:</strong> info@mrmelo.com</p>
+                  <p><strong>Contact:</strong> legal@mrmelo.com</p>
                   <p><strong>Last Updated:</strong> September 2024</p>
                 </div>
               </div>
