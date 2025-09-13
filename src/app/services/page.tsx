@@ -200,7 +200,7 @@ export default function ServicesPage() {
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">Ready to Get Started?</h2>
           <p className="text-xl text-gray-300 mb-8">
             Whether you need content creation services or personalized AI guidance through our Human Knowledge Model,
-            we're here to help bring your vision to life.
+            we&apos;re here to help bring your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
