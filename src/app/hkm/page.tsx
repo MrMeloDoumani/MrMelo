@@ -68,11 +68,12 @@ function HKMPageContent() {
               <span className="text-yellow-400 text-sm font-medium">🎯 Human Knowledge Model</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-serif mb-6 bg-gradient-to-r from-white via-yellow-100 to-orange-200 bg-clip-text text-transparent">
-              Personalized AI Intelligence
+              Human Reasoning Intelligence
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Experience the future of personalized knowledge. Our Human Knowledge Model combines advanced AI with human insight to deliver
-              strategic guidance tailored to your unique goals, challenges, and aspirations.
+              Experience human reasoning, critical thinking based on decades of experience, observations, and continuous learning.
+              Our Human Knowledge Model leverages AI tools for speed in delivery while ensuring every response reflects genuine
+              human insight tailored to your unique goals, challenges, and aspirations.
             </p>
           </div>
 
@@ -80,18 +81,18 @@ function HKMPageContent() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
               <div className="text-4xl mb-4">🧠</div>
-              <h3 className="text-xl font-semibold mb-3 text-white">Adaptive Learning</h3>
-              <p className="text-gray-300">Our AI evolves with your needs, learning from interactions to provide increasingly relevant insights.</p>
+              <h3 className="text-xl font-semibold mb-3 text-white">Human Reasoning</h3>
+              <p className="text-gray-300">Every response reflects genuine human insight, critical thinking, and decades of real-world experience - not just AI patterns.</p>
+            </div>
+            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-semibold mb-3 text-white">AI-Accelerated Delivery</h3>
+              <p className="text-gray-300">AI tools enhance speed and efficiency while preserving the depth and authenticity of human reasoning and expertise.</p>
             </div>
             <div className="bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
               <div className="text-4xl mb-4">🎯</div>
-              <h3 className="text-xl font-semibold mb-3 text-white">Strategic Focus</h3>
-              <p className="text-gray-300">Targeted guidance across business, personal development, and creative domains with precision.</p>
-            </div>
-            <div className="bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-              <div className="text-4xl mb-4">🔒</div>
-              <h3 className="text-xl font-semibold mb-3 text-white">Privacy First</h3>
-              <p className="text-gray-300">Enterprise-grade security ensures your conversations and data remain completely confidential.</p>
+              <h3 className="text-xl font-semibold mb-3 text-white">Personalized Strategy</h3>
+              <p className="text-gray-300">Strategic guidance tailored to your unique situation, drawing from proven methodologies and real-world observations.</p>
             </div>
           </div>
         </div>
