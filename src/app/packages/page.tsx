@@ -43,8 +43,6 @@ export default function PackagesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <div className="text-3xl font-bold text-purple-200 mb-2">$2,500</div>
-                <div className="text-purple-300/70">One-time investment</div>
               </div>
 
               <h3 className="text-xl font-semibold text-purple-200 mb-4 text-center">Launch Your Intellectual Journey</h3>
@@ -106,8 +104,6 @@ export default function PackagesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <div className="text-3xl font-bold text-amber-200 mb-2">$8,000</div>
-                <div className="text-amber-300/70">Monthly retainer</div>
               </div>
 
               <h3 className="text-xl font-semibold text-amber-200 mb-4 text-center">Cultivate Your Mastery</h3>
@@ -164,8 +160,6 @@ export default function PackagesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 </div>
-                <div className="text-3xl font-bold text-red-200 mb-2">$15,000+</div>
-                <div className="text-red-300/70">Custom enterprise solution</div>
               </div>
 
               <h3 className="text-xl font-semibold text-red-200 mb-4 text-center">Lead with Unmatched Excellence</h3>
