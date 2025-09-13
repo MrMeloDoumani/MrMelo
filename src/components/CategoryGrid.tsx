@@ -79,10 +79,10 @@ const CATEGORIES = {
       icon: '❤️'
     },
     {
-      id: 'health-wellness',
-      name: 'Health & Wellness Intelligence',
-      description: 'Holistic health approaches, mental wellness, longevity strategies',
-      icon: '🏥'
+      id: 'socio-economics',
+      name: 'Socio-Economics',
+      description: 'Economic trends, social dynamics, market analysis, wealth distribution',
+      icon: '📊'
     },
     {
       id: 'cultural-literacy',
@@ -103,10 +103,10 @@ const CATEGORIES = {
       icon: '📈'
     },
     {
-      id: 'community-impact',
-      name: 'Community & Social Impact',
-      description: 'Local engagement, volunteering, social entrepreneurship',
-      icon: '🤝'
+      id: 'ai-understanding',
+      name: 'AI Understanding',
+      description: 'Machine learning concepts, AI ethics, automation trends, technology integration',
+      icon: '🤖'
     },
     {
       id: 'film-cinema',
@@ -121,10 +121,10 @@ const CATEGORIES = {
       icon: '📺'
     },
     {
-      id: 'visual-arts',
-      name: 'Visual Arts & Paintings',
-      description: 'Art appreciation, painting techniques, gallery recommendations',
-      icon: '🎨'
+      id: 'communication-strategies',
+      name: 'Communication Strategies',
+      description: 'Presentation skills, negotiation tactics, stakeholder management, messaging frameworks',
+      icon: '💬'
     },
     {
       id: 'literature-books',
@@ -145,16 +145,16 @@ const CATEGORIES = {
       icon: '🏠'
     },
     {
-      id: 'leisure-activities',
-      name: 'Leisure & Hobby Exploration',
-      description: 'Hobby development, recreational activities, creative pursuits',
-      icon: '🎭'
+      id: 'media-production',
+      name: 'Media Production',
+      description: 'Video editing, content creation, multimedia storytelling, production techniques',
+      icon: '🎬'
     },
     {
-      id: 'cultural-events',
-      name: 'Cultural Events & Experiences',
-      description: 'Festivals, exhibitions, performances, cultural immersion',
-      icon: '🎪'
+      id: 'creative-academic-writing',
+      name: 'Creative & Academic Writing',
+      description: 'Essay composition, research writing, creative storytelling, academic publishing',
+      icon: '✍️'
     }
   ]
 };
@@ -263,45 +263,110 @@ function getCategoryPrompts(categoryId: string): string[] {
       'What strategies retain top talent during uncertainty?',
       'How to communicate organizational changes effectively?'
     ],
+    'technology': [
+      'Which emerging technologies should I invest in for competitive advantage?',
+      'How can I implement AI automation in my current workflow?',
+      'What cybersecurity measures are essential for modern businesses?'
+    ],
+    'communication': [
+      'How can I improve stakeholder communication during crises?',
+      'What messaging strategies work best for different audiences?',
+      'How to build trust through transparent corporate communications?'
+    ],
+    'financial-strategy': [
+      'How should I allocate capital between growth and stability?',
+      'What financial metrics matter most for long-term success?',
+      'How to optimize cash flow during economic uncertainty?'
+    ],
+    'innovation': [
+      'How can I foster a culture of innovation in my organization?',
+      'What frameworks work best for evaluating new business ideas?',
+      'How to balance innovation with operational stability?'
+    ],
+    'sustainability': [
+      'How can I integrate ESG principles into my business strategy?',
+      'What sustainable practices deliver both environmental and financial benefits?',
+      'How to measure and report on sustainability initiatives effectively?'
+    ],
+    'personal-finance': [
+      'How can I build an emergency fund while managing debt?',
+      'What investment strategies work for different risk tolerances?',
+      'How to create a comprehensive retirement planning strategy?'
+    ],
+    'lifestyle-design': [
+      'How can I design a work-life balance that actually works?',
+      'What daily habits compound into significant life improvements?',
+      'How to create sustainable routines for long-term fulfillment?'
+    ],
+    'relationships': [
+      'How can I improve communication in professional relationships?',
+      'What strategies help maintain work friendships during transitions?',
+      'How to build authentic connections in networking environments?'
+    ],
+    'socio-economics': [
+      'How do economic policies affect different socioeconomic groups?',
+      'What trends are reshaping wealth distribution globally?',
+      'How can businesses address income inequality in their communities?'
+    ],
+    'cultural-literacy': [
+      'How can I better understand diverse cultural perspectives in business?',
+      'What media literacy skills are essential for modern professionals?',
+      'How to navigate cultural differences in international markets?'
+    ],
+    'technology-adoption': [
+      'Which digital tools will revolutionize my industry in the next 5 years?',
+      'How can I maintain digital wellness while staying technologically competitive?',
+      'What privacy considerations matter most when adopting new technologies?'
+    ],
+    'personal-development': [
+      'How can I accelerate my learning curve in a new professional domain?',
+      'What continuous improvement frameworks deliver measurable results?',
+      'How to build resilience and adaptability in changing environments?'
+    ],
+    'ai-understanding': [
+      'How can I leverage AI to enhance rather than replace human capabilities?',
+      'What ethical considerations matter most when implementing AI solutions?',
+      'How to prepare my organization for AI-driven industry transformation?'
+    ],
     'film-cinema': [
-      'What films should I watch to understand different cultures?',
-      'How can I develop better taste in cinema?',
-      'What are the most influential films of the last decade?'
+      'Which documentaries offer unique insights into business innovation?',
+      'How can cinematic storytelling techniques improve business presentations?',
+      'What films best illustrate leadership and organizational dynamics?'
     ],
     'tv-series': [
-      'Which streaming series are worth binge-watching this month?',
-      'How do I find TV shows that match my interests?',
-      'What series have the best character development?'
+      'Which series demonstrate effective team dynamics and leadership?',
+      'How can narrative arcs from television inform business strategy?',
+      'What shows illustrate successful organizational change management?'
     ],
-    'visual-arts': [
-      'How can I start appreciating modern art?',
-      'What painting techniques should beginners learn?',
-      'Which art galleries should I visit in my city?'
+    'communication-strategies': [
+      'How can I craft compelling narratives for stakeholder presentations?',
+      'What negotiation frameworks work best in high-stakes business deals?',
+      'How to communicate complex technical concepts to non-technical audiences?'
     ],
     'literature-books': [
-      'What books should I read to improve my writing?',
-      'How do I find books similar to my favorites?',
-      'What are the most thought-provoking books of recent years?'
+      'Which business biographies offer valuable leadership lessons?',
+      'How can classic literature inform modern management practices?',
+      'What books provide frameworks for strategic decision-making?'
     ],
     'music-audio': [
-      'How can I discover new music genres?',
-      'What playlists match different moods and activities?',
-      'Which concerts should I attend this season?'
+      'How can audio content strategies enhance brand storytelling?',
+      'What music psychology principles apply to workplace productivity?',
+      'How to create compelling audio experiences for business communications?'
     ],
     'daily-life': [
-      'How can I optimize my morning routine for productivity?',
-      'What are the best strategies for meal planning?',
-      'How do I create a more organized home environment?'
+      'How can I optimize my daily routines for maximum professional impact?',
+      'What life hacks improve work-from-home productivity and well-being?',
+      'How to create sustainable habits that support long-term career growth?'
     ],
-    'leisure-activities': [
-      'What hobbies should I try based on my personality?',
-      'How can I make time for leisure activities?',
-      'What are fulfilling ways to spend weekends?'
+    'media-production': [
+      'How can I improve video content quality for professional presentations?',
+      'What multimedia storytelling techniques engage audiences most effectively?',
+      'How to optimize content production workflows for efficiency and quality?'
     ],
-    'cultural-events': [
-      'What cultural festivals are happening near me?',
-      'How can I get involved in local cultural events?',
-      'What exhibitions should I visit this month?'
+    'creative-academic-writing': [
+      'How can I structure complex ideas for clear academic and professional writing?',
+      'What research methodologies provide the most actionable business insights?',
+      'How to craft compelling narratives for business proposals and reports?'
     ]
   };
 
