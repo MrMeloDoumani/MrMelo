@@ -13,9 +13,16 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-2 rounded-full bg-purple-900/30 border border-purple-500/30 px-4 py-2 mb-8">
               <span className="text-purple-300 text-sm font-medium">Character First</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif mb-6 bg-gradient-to-r from-purple-200 via-amber-200 to-red-200 bg-clip-text text-transparent">
-              A Fighter for Thinkers
+            <h1 className="text-5xl md:text-6xl font-serif mb-6 bg-gradient-to-r from-purple-200 via-amber-200 to-red-200 bg-clip-text text-transparent">
+              About Mr. Melo
             </h1>
+            <div className="mb-8">
+              <blockquote className="text-2xl md:text-3xl text-gray-200 italic font-serif leading-relaxed mb-4">
+                &ldquo;We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time.&rdquo;
+              </blockquote>
+              <cite className="text-purple-300 text-lg">— T.S. Eliot</cite>
+            </div>
+
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
               <strong>The Method:</strong> This about page represents a radical approach to character revelation.
               Rather than self-description, we invited an AI analyst (Dr. Elias Hartman) to study Melo&apos;s complete body
@@ -70,25 +77,22 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Family Perspective */}
+            {/* Milan Kundera - Identity & Authenticity */}
             <div className="group relative rounded-2xl bg-gradient-to-br from-purple-900/20 to-indigo-900/20 border border-purple-500/30 p-8 hover:border-purple-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-purple-300 font-semibold text-lg">A</span>
+                  <span className="text-purple-300 font-semibold text-lg">M</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-purple-200 font-semibold mb-1">Amira</h3>
-                  <p className="text-purple-300/70 text-sm">Sister</p>
+                  <h3 className="text-purple-200 font-semibold mb-1">Milan Kundera</h3>
+                  <p className="text-purple-300/70 text-sm">Author of &ldquo;The Unbearable Lightness of Being&rdquo;</p>
                 </div>
               </div>
 
               <blockquote className="text-gray-300 italic leading-relaxed">
-                &ldquo;Melo has always been the quiet observer in our family - the one who notices the unspoken tensions,
-                the cultural shifts, the way technology changes how we connect. His &lsquo;Content of Character&rsquo; track
-                surprised me at first, but then I realized it&apos;s pure him. He&apos;s brutally honest about his own
-                flaws too - that stubbornness that comes from deep conviction, that tendency to disappear when he needs
-                to process. But his heart... when he&apos;s present, his presence fills the room with this gentle,
-                unwavering authenticity that makes you want to be better.&rdquo;
+                &ldquo;The heaviest of burdens crushes us, we sink beneath it, it pins us to the ground. But in the love poetry of every age,
+                the woman longs to be weighed down by the man&apos;s body. The heaviest of burdens is therefore simultaneously an image of life&apos;s
+                most intense fulfillment. The heavier the burden, the closer our lives come to the earth, the more real and truthful they become.&rdquo;
               </blockquote>
 
               <div className="mt-4 flex text-purple-400">
@@ -100,25 +104,21 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Creative Collaborator */}
+            {/* George Orwell - Truth & Integrity */}
             <div className="group relative rounded-2xl bg-gradient-to-br from-amber-900/20 to-yellow-900/20 border border-amber-500/30 p-8 hover:border-amber-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-amber-300 font-semibold text-lg">K</span>
+                  <span className="text-amber-300 font-semibold text-lg">O</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-amber-200 font-semibold mb-1">Kareem El-Sayed</h3>
-                  <p className="text-amber-300/70 text-sm">Creative Director & Podcast Co-Host</p>
+                  <h3 className="text-amber-200 font-semibold mb-1">George Orwell</h3>
+                  <p className="text-amber-300/70 text-sm">Author of &ldquo;1984&rdquo; &amp; &ldquo;Animal Farm&rdquo;</p>
                 </div>
               </div>
 
               <blockquote className="text-gray-300 italic leading-relaxed">
-                &ldquo;Working with Melo on our philosophy podcast was a masterclass in both brilliance and frustration.
-                His mind moves through ideas like a dancer - graceful, precise, always several steps ahead. But that same
-                intensity can make collaboration challenging; he has little patience for surface-level work or small talk.
-                When he writes about &lsquo;The Loneliness Economy,&rsquo; you feel he&apos;s not just analyzing society -
-                he&apos;s confessing his own struggles with disconnection. His vulnerability is his greatest strength,
-                even when it makes him difficult to work with. That&apos;s the paradox of true thinkers.&rdquo;
+                &ldquo;In a time of deceit telling the truth is a revolutionary act. In a time of universal deceit - telling the truth
+                is a revolutionary act. Freedom is the freedom to say that two plus two make four. If that is granted, all else follows.&rdquo;
               </blockquote>
 
               <div className="mt-4 flex text-amber-400">
@@ -130,25 +130,22 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Professional Colleague */}
+            {/* Aldous Huxley - Perception & Consciousness */}
             <div className="group relative rounded-2xl bg-gradient-to-br from-red-900/20 to-rose-900/20 border border-red-500/30 p-8 hover:border-red-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10 md:col-span-2 lg:col-span-1">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-red-300 font-semibold text-lg">L</span>
+                  <span className="text-red-300 font-semibold text-lg">H</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-red-200 font-semibold mb-1">Layla Mahmoud</h3>
-                  <p className="text-red-300/70 text-sm">Content Strategy Director</p>
+                  <h3 className="text-red-200 font-semibold mb-1">Aldous Huxley</h3>
+                  <p className="text-red-300/70 text-sm">Author of &ldquo;Brave New World&rdquo;</p>
                 </div>
               </div>
 
               <blockquote className="text-gray-300 italic leading-relaxed">
-                &ldquo;In the corporate world, Melo stands out like a monk in a boardroom. His strategic mind is unmatched -
-                he can dissect complex telecom campaigns with the precision of a surgeon. But that same analytical brilliance
-                can border on ruthless; he has no tolerance for mediocrity or excuses. I&apos;ve seen him walk away from
-                lucrative projects because they compromised his standards. His Leadership Manifesto isn&apos;t just philosophy -
-                it&apos;s how he operates. He leads through clarity, not charisma, and it works... until it doesn&apos;t.
-                His uncompromising nature is both his greatest asset and his occasional blind spot.&rdquo;
+                &ldquo;There are things known and there are things unknown, and in between are the doors of perception.
+                Experience is not what happens to you; it&apos;s what you do with what happens to you. The more powerful and
+                original a mind, the more it will incline towards the religion of solitude.&rdquo;
               </blockquote>
 
               <div className="mt-4 flex text-red-400">
