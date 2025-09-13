@@ -208,7 +208,7 @@ const TIERS = {
 
 export default function AskMrMeloPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [responses, setResponses] = useState({});
+  const [responses, setResponses] = useState<Record<string, string>>({});
   const [currentStep, setCurrentStep] = useState('selection');
 
   const toggleCategory = (categoryId: string) => {
@@ -433,6 +433,7 @@ export default function AskMrMeloPage() {
               <div className="space-y-8 mb-12">
                 {selectedCategories.map(categoryId => {
                   const category = CATEGORIES.find(c => c.id === categoryId);
+                  if (!category) return null;
                   return (
                     <div key={categoryId} className="bg-gray-900 p-8 rounded-lg">
                       <div className="flex items-center mb-6">
@@ -501,6 +502,7 @@ export default function AskMrMeloPage() {
                   <div className="flex flex-wrap gap-3">
                     {selectedCategories.map(categoryId => {
                       const category = CATEGORIES.find(c => c.id === categoryId);
+                      if (!category) return null;
                       return (
                         <span key={categoryId} className="bg-yellow-400/20 text-yellow-400 px-4 py-2 rounded-full text-sm">
                           {category.icon} {category.name}

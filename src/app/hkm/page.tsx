@@ -7,7 +7,7 @@ import PricingTiers from '../../components/PricingTiers';
 import SignupForm from '../../components/SignupForm';
 import SignUpModal from '../../components/SignUpModal';
 
-export default function HKMPage() {
+function HKMPageContent() {
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
   const searchParams = useSearchParams();
@@ -156,12 +156,19 @@ export default function HKMPage() {
       </section>
 
       {/* Sign Up Modal */}
-      {showSignUpModal && (
-        <SignUpModal
-          onClose={() => setShowSignUpModal(false)}
-          selectedTier={selectedTier}
-        />
-      )}
+      <SignUpModal
+        open={showSignUpModal}
+        onClose={() => setShowSignUpModal(false)}
+        section={selectedTier}
+      />
     </div>
+  );
+}
+
+export default function HKMPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center"><div className="text-white">Loading...</div></div>}>
+      <HKMPageContent />
+    </Suspense>
   );
 }
