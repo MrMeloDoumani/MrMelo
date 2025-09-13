@@ -2,17 +2,29 @@ import { useState, useEffect } from 'react';
 
 // Helper function to get MIME type based on file extension
 const getVideoMimeType = (filename: string): string => {
+  if (!filename) return 'video/mp4';
+
   const extension = filename.split('.').pop()?.toLowerCase();
   switch (extension) {
     case 'mp4':
     case 'm4v':
-      return 'video/mp4';
+    case 'm4p':
+      return 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
     case 'mov':
+    case 'qt':
       return 'video/quicktime';
     case 'webm':
-      return 'video/webm';
+      return 'video/webm; codecs="vp8, vorbis"';
     case 'avi':
       return 'video/x-msvideo';
+    case 'wmv':
+      return 'video/x-ms-wmv';
+    case 'flv':
+      return 'video/x-flv';
+    case 'mkv':
+      return 'video/x-matroska';
+    case '3gp':
+      return 'video/3gpp';
     default:
       return 'video/mp4'; // fallback
   }
@@ -146,8 +158,18 @@ export default function HighlightsPage() {
                   crossOrigin="anonymous"
                   onLoadedData={() => handleVideoLoad(video.id)}
                   onError={() => handleVideoError(video.id)}
+                  onCanPlay={() => handleVideoLoad(video.id)}
+                  onLoadStart={() => setVideoStates(prev => ({
+                    ...prev,
+                    [video.id]: { loading: true, error: false }
+                  }))}
                 >
                   <source src={video.src} type={getVideoMimeType(video.src)} />
+                  {/* Fallback formats for broader browser support */}
+                  <source src={video.src.replace(/\.(mp4|m4v|mov)$/i, '.webm')} type="video/webm" />
+                  <source src={video.src.replace(/\.(mp4|m4v|mov)$/i, '.ogg')} type="video/ogg" />
+                  {/* Fallback for older browsers */}
+                  <track kind="captions" src="" label="No captions available" default />
                   Your browser does not support the video tag.
                 </video>
 
