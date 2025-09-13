@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-white">1. Introduction</h2>
               <p className="text-gray-300 mb-4">
-                Mr. Melo ("we," "our," or "us") respects your privacy and is committed to protecting your personal information.
+                Mr. Melo (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) respects your privacy and is committed to protecting your personal information.
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our
                 Human Knowledge Model platform and related services.
               </p>
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4 text-white">11. Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-white">11. Children&apos;s Privacy</h2>
               <p className="text-gray-300 mb-4">
                 Our services are not intended for children under 13. We do not knowingly collect personal information from children under 13.
                 If we become aware that we have collected such information, we will take steps to delete it.

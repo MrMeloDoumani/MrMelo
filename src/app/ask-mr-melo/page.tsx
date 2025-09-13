@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const CATEGORIES = [
   // Strategic Categories
@@ -190,19 +191,22 @@ const TIERS = {
     name: 'Basic Access',
     price: '$15/month',
     email: 'basic@mrmelo.com',
-    responseTime: '48 hours'
+    responseTime: '48 hours',
+    formats: ['📝 Text']
   },
   deepDiver: {
     name: 'Deep Diver',
     price: '$35/month',
     email: 'deepdiver@mrmelo.com',
-    responseTime: '36 hours'
+    responseTime: '36 hours',
+    formats: ['📝 Text', '🎧 Audio']
   },
   archiveMaster: {
     name: 'Archive Master',
     price: '$65/month',
     email: 'archivemaster@mrmelo.com',
-    responseTime: '24 hours'
+    responseTime: '24 hours',
+    formats: ['📝 Text', '🎧 Audio', '🎬 Video']
   }
 };
 
