@@ -24,25 +24,13 @@ export default function Home() {
           </div>
         </div>
         <div className="relative aspect-[1/1] md:aspect-[4/3] w-full md:pl-8" style={{ perspective: 1000 }}>
-          <video
-            className="absolute inset-0 h-full w-full object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2 [@media_(prefers-reduced-motion:_reduce)]:hidden md:block hidden"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            poster="/hero/poster.jpg"
-          >
-            <source src="/hero/loop.webm" type="video/webm" />
-            <source src="/hero/loop.mp4" type="video/mp4" />
-          </video>
-          <Image
-            src="/hero/poster.jpg"
-            alt="Hero visual"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2 hidden [@media_(prefers-reduced-motion:_reduce)]:block"
-            priority
+          <VideoPlayer
+            videoSrc={{
+              webm: "https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Creative%20Video%20Essay.mp4",
+              mp4: "https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Creative%20Video%20Essay.mp4"
+            }}
+            posterSrc="https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/poster.jpg"
+            className="md:translate-x-2"
           />
         </div>
       </div>
