@@ -23,11 +23,11 @@ export default function HighlightsPage() {
       thumbnail: '/video-highlights/thumbnails/Foundernomics Song Commercial.jpg'
     },
     {
-      id: 'mock-commercial-tanweer',
-      title: 'Mock Commercial (Tanweer)',
+      id: 'mock-commercial-sahara',
+      title: 'Mock Commercial (Sahara)',
       description: 'Creative mock commercial demonstrating advertising concepts and brand storytelling',
-      src: '/video-highlights/Mock Commercial (Tanweer).mp4',
-      thumbnail: '/video-highlights/thumbnails/Mock Commercial (Tanweer).jpg'
+      src: '/video-highlights/Mock Commercial (Sahara).MP4',
+      thumbnail: '/video-highlights/thumbnails/Mock Commercial (Sahara).jpg'
     },
     {
       id: 'mock-podcast-tansweer',
@@ -47,8 +47,8 @@ export default function HighlightsPage() {
       id: 'testimonials',
       title: 'Client Testimonials',
       description: 'Authentic testimonials from satisfied clients sharing their success stories and experiences',
-      src: '/video-highlights/Testimonials.mp4',
-      thumbnail: '/video-highlights/thumbnails/Testimonials.jpg'
+      src: '/video-highlights/Testiomonials.MP4',
+      thumbnail: '/video-highlights/thumbnails/Testiomonials.jpg'
     }
   ];
 
