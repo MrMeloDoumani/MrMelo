@@ -30,7 +30,7 @@ const faqData: FAQItem[] = [
   // Pricing & Tiers
   {
     question: "What's included in each access tier?",
-    answer: "All tiers include access to our core Human Knowledge Model. The Deep Diver tier ($35/month) provides priority responses and extended conversations. The Archive Master tier ($65/month) includes premium features, direct human consultation, and exclusive content access. Custom tiers are available for enterprise clients.",
+    answer: "All tiers include access to our core Human Knowledge Model. The Foundation tier ($49/month) includes 4 knowledge domains with 48-72 hour response time and 5 questions per month. The Professional tier ($99/month) provides 8 domains, 24-48 hour responses, 15 questions monthly, priority support, and consultation calls. The Executive tier ($199/month) unlocks all 16 domains with unlimited questions, 12-24 hour responses, strategy sessions, expert networking, and custom research.",
     category: "Pricing & Tiers"
   },
   {
@@ -43,16 +43,36 @@ const faqData: FAQItem[] = [
     answer: "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied with the service, contact our support team within 30 days of your first payment for a full refund.",
     category: "Pricing & Tiers"
   },
+  {
+    question: "What does the Foundation tier include?",
+    answer: "The Foundation tier ($49/month) is perfect for exploring the HKM. It includes access to 4 knowledge domains, 48-72 hour response times, 5 questions per month, and basic email support. This tier is ideal for individuals wanting to dip their toes into personalized AI guidance.",
+    category: "Pricing & Tiers"
+  },
+  {
+    question: "What does the Professional tier include?",
+    answer: "The Professional tier ($99/month) is our most popular choice, offering 8 knowledge domains, 24-48 hour response times, 15 questions per month, priority email support, and monthly consultation calls. Perfect for serious users who want comprehensive access and regular human guidance.",
+    category: "Pricing & Tiers"
+  },
+  {
+    question: "What does the Executive tier include?",
+    answer: "The Executive tier ($199/month) provides complete HKM mastery with all 16 knowledge domains, 12-24 hour response times, unlimited questions, monthly strategy sessions, direct expert networking opportunities, and custom research requests. Designed for professionals who need comprehensive, unlimited access.",
+    category: "Pricing & Tiers"
+  },
 
   // Signup & Access
   {
     question: "How do I get started?",
-    answer: "Getting started is simple: 1) Choose your knowledge domains, 2) Select an access tier, 3) Complete the registration form, 4) Receive your personalized access code, and 5) Start asking questions immediately.",
+    answer: "Getting started is simple: 1) Explore our 16 knowledge domains on the HKM page, 2) Select an access tier that fits your needs, 3) Complete the registration form, 4) Receive your personalized access code, and 5) Start asking questions immediately through our Ask Mr. Melo interface.",
     category: "Signup & Access"
   },
   {
     question: "What information do I need to sign up?",
     answer: "You'll need to provide your name, email address, and select whether you're joining as a business professional or individual user. We also ask about your primary areas of interest to personalize your experience.",
+    category: "Signup & Access"
+  },
+  {
+    question: "What knowledge domains are available?",
+    answer: "We offer 16 specialized knowledge domains: Strategic Business, Economic Forecasting, Leadership, Technology & AI, Communication & Stakeholder Management, Financial Strategy, Innovation, Sustainability (B2B), plus Personal Finance, Lifestyle Design, Relationships, Socio-Economics, Cultural & Media Literacy, Technology Adoption, Personal Development, AI Understanding, Film & Cinema, TV Series, Communication Strategies, Literature & Books, Music & Audio, Daily Life, Media Production, and Creative & Academic Writing (B2C).",
     category: "Signup & Access"
   },
   {
