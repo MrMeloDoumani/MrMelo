@@ -237,7 +237,7 @@ export default function ServicesPage() {
           <h2 className="text-4xl md:text-5xl font-serif mb-6 bg-gradient-to-r from-amber-100 via-gold-200 to-amber-300 bg-clip-text text-transparent">Ready to Fight for Excellence?</h2>
           <p className="text-xl text-gray-300 mb-8">
             Join the champions of intellectual depth and cultural mastery. Whether through masterful content creation or personalized AI wisdom,
-            we're here to nourish your pursuit of excellence and empower your journey toward mastery.
+            we&apos;re here to nourish your pursuit of excellence and empower your journey toward mastery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
