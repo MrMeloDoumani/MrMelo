@@ -16,12 +16,6 @@ export default function AboutPage() {
             <h1 className="text-5xl md:text-6xl font-serif mb-6 bg-gradient-to-r from-purple-200 via-amber-200 to-red-200 bg-clip-text text-transparent">
               About Mr. Melo
             </h1>
-            <div className="mb-8">
-              <blockquote className="text-2xl md:text-3xl text-gray-200 italic font-serif leading-relaxed mb-4">
-                &ldquo;We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time.&rdquo;
-              </blockquote>
-              <cite className="text-purple-300 text-lg">— T.S. Eliot</cite>
-            </div>
 
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
               <strong>The Method:</strong> This about page represents a radical approach to character revelation.
@@ -39,10 +33,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Character Testimonials */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-20">
-            {/* Dr. Elias Hartman - AI Analyst Perspective */}
-            <div className="group relative rounded-2xl bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-500/30 p-8 hover:border-emerald-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 md:col-span-2 lg:col-span-3">
+          {/* Dr. Elias Hartman - AI Analyst Perspective */}
+          <div className="mb-20">
+            <div className="group relative rounded-2xl bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border border-emerald-500/30 p-8 hover:border-emerald-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 max-w-4xl mx-auto">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-emerald-300 font-semibold text-lg">E</span>
@@ -69,6 +62,34 @@ export default function AboutPage() {
               </blockquote>
 
               <div className="mt-4 flex text-emerald-400">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Literary Quotes */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-20">
+            {/* T.S. Eliot - Exploration & Self-Discovery */}
+            <div className="group relative rounded-2xl bg-gradient-to-br from-slate-900/20 to-gray-900/20 border border-slate-500/30 p-8 hover:border-slate-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-500/10">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-slate-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-slate-300 font-semibold text-lg">E</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-slate-200 font-semibold mb-1">T.S. Eliot</h3>
+                  <p className="text-slate-300/70 text-sm">Author of &ldquo;The Waste Land&rdquo;</p>
+                </div>
+              </div>
+
+              <blockquote className="text-gray-300 italic leading-relaxed">
+                &ldquo;We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time.&rdquo;
+              </blockquote>
+
+              <div className="mt-4 flex text-slate-400">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -238,6 +259,101 @@ export default function AboutPage() {
               <em>Your authentic voice, whether complimentary or constructive, contributes to a more complete picture
               of character. This is about understanding, not perfection.</em>
             </p>
+          </div>
+
+          {/* Testimonial Submission Form */}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/30 rounded-2xl p-8">
+              <h3 className="text-2xl font-serif mb-6 text-center bg-gradient-to-r from-indigo-200 to-purple-200 bg-clip-text text-transparent">
+                Share Your Voice
+              </h3>
+              <p className="text-gray-300 text-center mb-6">
+                Submit your authentic experience of Melo&apos;s character. All submissions are reviewed personally.
+              </p>
+
+              <form
+                action="mailto:info@mrmelo.com"
+                method="post"
+                encType="text/plain"
+                className="space-y-4"
+              >
+                <input type="hidden" name="subject" value="Character Testimonial Submission - About Mr. Melo" />
+
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                    placeholder="Your full name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="relationship" className="block text-sm font-medium text-gray-300 mb-2">
+                    Your Relationship to Melo *
+                  </label>
+                  <select
+                    id="relationship"
+                    name="relationship"
+                    required
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg text-white focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                  >
+                    <option value="">Select relationship</option>
+                    <option value="family">Family Member</option>
+                    <option value="friend">Friend</option>
+                    <option value="colleague">Colleague</option>
+                    <option value="peer">Creative Peer</option>
+                    <option value="collaborator">Collaborator</option>
+                    <option value="client">Client/Partner</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    Your Email (Optional)
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="testimonial" className="block text-sm font-medium text-gray-300 mb-2">
+                    Your Testimonial *
+                  </label>
+                  <textarea
+                    id="testimonial"
+                    name="testimonial"
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none"
+                    placeholder="Share your authentic experience of Melo's character. Include both the sweetness of his wisdom and any constructive observations - radical transparency welcomes the full spectrum."
+                  ></textarea>
+                </div>
+
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-indigo-600 to-purple-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-indigo-500 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25"
+                  >
+                    Submit Testimonial
+                  </button>
+                  <p className="text-xs text-gray-400 text-center mt-3">
+                    Submissions open a new email with your testimonial. Melo reviews all submissions personally.
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
