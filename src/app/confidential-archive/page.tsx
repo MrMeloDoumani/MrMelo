@@ -338,7 +338,7 @@ export default function ConfidentialArchive() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://www.paypal.com/paypalme/MrMelo84/35"
+                href="paragraph https://www.paypal.com/paypalme/MrMelo84/35"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ripple rounded-full bg-[color:var(--accent)] text-black px-8 py-4 text-lg font-medium hover:opacity-90"

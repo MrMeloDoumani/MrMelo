@@ -107,6 +107,54 @@ const CATEGORIES = {
       name: 'Community & Social Impact',
       description: 'Local engagement, volunteering, social entrepreneurship',
       icon: '🤝'
+    },
+    {
+      id: 'film-cinema',
+      name: 'Film & Cinema Appreciation',
+      description: 'Movie recommendations, film analysis, cinema culture insights',
+      icon: '🎥'
+    },
+    {
+      id: 'tv-series',
+      name: 'TV Series & Streaming Content',
+      description: 'Series recommendations, binge-watching strategies, entertainment curation',
+      icon: '📺'
+    },
+    {
+      id: 'visual-arts',
+      name: 'Visual Arts & Paintings',
+      description: 'Art appreciation, painting techniques, gallery recommendations',
+      icon: '🎨'
+    },
+    {
+      id: 'literature-books',
+      name: 'Literature & Book Discovery',
+      description: 'Reading recommendations, literary analysis, book club discussions',
+      icon: '📚'
+    },
+    {
+      id: 'music-audio',
+      name: 'Music & Audio Entertainment',
+      description: 'Music discovery, playlist curation, concert recommendations',
+      icon: '🎵'
+    },
+    {
+      id: 'daily-life',
+      name: 'Daily Life & Living Well',
+      description: 'Home organization, meal planning, household management, life hacks',
+      icon: '🏠'
+    },
+    {
+      id: 'leisure-activities',
+      name: 'Leisure & Hobby Exploration',
+      description: 'Hobby development, recreational activities, creative pursuits',
+      icon: '🎭'
+    },
+    {
+      id: 'cultural-events',
+      name: 'Cultural Events & Experiences',
+      description: 'Festivals, exhibitions, performances, cultural immersion',
+      icon: '🎪'
     }
   ]
 };
@@ -214,9 +262,49 @@ function getCategoryPrompts(categoryId: string): string[] {
       'How to build high-performance culture in remote environments?',
       'What strategies retain top talent during uncertainty?',
       'How to communicate organizational changes effectively?'
+    ],
+    'film-cinema': [
+      'What films should I watch to understand different cultures?',
+      'How can I develop better taste in cinema?',
+      'What are the most influential films of the last decade?'
+    ],
+    'tv-series': [
+      'Which streaming series are worth binge-watching this month?',
+      'How do I find TV shows that match my interests?',
+      'What series have the best character development?'
+    ],
+    'visual-arts': [
+      'How can I start appreciating modern art?',
+      'What painting techniques should beginners learn?',
+      'Which art galleries should I visit in my city?'
+    ],
+    'literature-books': [
+      'What books should I read to improve my writing?',
+      'How do I find books similar to my favorites?',
+      'What are the most thought-provoking books of recent years?'
+    ],
+    'music-audio': [
+      'How can I discover new music genres?',
+      'What playlists match different moods and activities?',
+      'Which concerts should I attend this season?'
+    ],
+    'daily-life': [
+      'How can I optimize my morning routine for productivity?',
+      'What are the best strategies for meal planning?',
+      'How do I create a more organized home environment?'
+    ],
+    'leisure-activities': [
+      'What hobbies should I try based on my personality?',
+      'How can I make time for leisure activities?',
+      'What are fulfilling ways to spend weekends?'
+    ],
+    'cultural-events': [
+      'What cultural festivals are happening near me?',
+      'How can I get involved in local cultural events?',
+      'What exhibitions should I visit this month?'
     ]
   };
-  
+
   return prompts[categoryId] || [
     'What are the key challenges in this area?',
     'How can I improve my approach to this topic?',
