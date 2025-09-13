@@ -137,7 +137,7 @@ function HKMPageContent() {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">Ready to Transform Your Knowledge Journey?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join thousands who have unlocked their potential with personalized AI intelligence.
+            Join thousands who have unlocked their potential with genuine human insight, critical thinking, and AI-accelerated wisdom.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
