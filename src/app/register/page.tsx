@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 interface RegistrationData {
@@ -23,7 +22,6 @@ export default function Register() {
   const [errors, setErrors] = useState<Partial<RegistrationData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registrationComplete, setRegistrationComplete] = useState(false);
-  const router = useRouter();
 
   const validateForm = (): boolean => {
     const newErrors: Partial<RegistrationData> = {};

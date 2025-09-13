@@ -41,7 +41,7 @@ export function SignUpModal({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...values, source_section: section ?? "homepage" }),
       });
-    } catch (e) {
+    } catch (_e) {
       // noop
     }
   };

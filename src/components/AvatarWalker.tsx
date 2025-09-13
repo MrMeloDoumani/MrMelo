@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 
 type VisemeEntry = { start: number; end: number; viseme: string };
 type VisemeData = { entries: VisemeEntry[] };
@@ -114,7 +115,7 @@ export default function AvatarWalker() {
         style={{ transform: `translate(${Math.round(pos.x)}px, ${Math.round(pos.y)}px)` }}
       >
         <div className="relative w-28 h-28 rounded-full border border-[color:var(--sand)] bg-black/70 p-2 shadow-lg">
-          <img src="/avatar/guide.png" alt="Guide avatar" className="h-full w-full rounded-full object-cover" />
+          <Image src="/avatar/guide.png" alt="Guide avatar" width={112} height={112} className="h-full w-full rounded-full object-cover" />
           <svg className="absolute left-1/2 bottom-3 -translate-x-1/2" width="52" height="24" viewBox="0 0 52 24" aria-hidden>
             <path d={`M2,12 C10,${12 - mouth*6} 42,${12 - mouth*6} 50,12 C42,${12 + mouth*6} 10,${12 + mouth*6} 2,12 Z`} fill="rgba(255, 204, 102, 0.85)" stroke="rgba(255, 204, 102, 0.95)" strokeWidth="1" />
             <path d={`M6,12 C14,${12 - mouth*5} 38,${12 - mouth*5} 46,12 C38,${12 + mouth*5} 14,${12 + mouth*5} 6,12 Z`} fill="rgba(0,0,0,0.75)" />

@@ -251,10 +251,6 @@ export default function AskMrMeloPage() {
     setCurrentStep('categories');
   };
 
-  const handleSignup = () => {
-    setIsAuthenticated(true);
-    setCurrentStep('tier-selection');
-  };
 
   const generateRequestEmail = () => {
     const tier = TIERS[selectedTier as keyof typeof TIERS];
