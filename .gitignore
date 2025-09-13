@@ -39,4 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large video files (handled by Vercel deployment, not Git)
+public/video-highlights/*.mp4
+public/video-highlights/*.MP4
+public/video-highlights/*.MOV
+public/video-highlights/*.mov
 /public/work/highlights/sahara/clip.mp4
