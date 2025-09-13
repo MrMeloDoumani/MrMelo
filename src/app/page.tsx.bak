@@ -1,6 +1,6 @@
 import Image from "next/image";
-import VideoPlayer from "@/components/VideoPlayer";import { IconVoice, IconVideo, IconWords, IconPics, IconCode } from "@/components/icons";
-import GuideOverlay from "@/components/GuideOverlay";
+import VideoPlayer from "@/components/VideoPlayer";
+import { IconVoice, IconVideo, IconWords, IconPics, IconCode } from "@/components/icons";import GuideOverlay from "@/components/GuideOverlay";
 
 export default function Home() {
   return (
@@ -24,7 +24,14 @@ export default function Home() {
           </div>
         </div>
         <div className="relative aspect-[1/1] md:aspect-[4/3] w-full md:pl-8" style={{ perspective: 1000 }}>
-          <video
+          <VideoPlayer
+            videoSrc={{
+              webm: "/hero/loop.webm",
+              mp4: "/hero/loop.mp4"
+            }}
+            posterSrc="/hero/poster.jpg"
+            className="md:translate-x-2"
+          />
             className="absolute inset-0 h-full w-full object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2 [@media_(prefers-reduced-motion:_reduce)]:hidden md:block hidden"
             autoPlay
             loop
@@ -33,16 +40,6 @@ export default function Home() {
             preload="metadata"
             poster="/hero/poster.jpg"
           >
-            <source src="/hero/loop.webm" type="video/webm" />
-            <source src="/hero/loop.mp4" type="video/mp4" />
-          </video>
-          <Image
-            src="/hero/poster.jpg"
-            alt="Hero visual"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover rounded-xl border border-[color:var(--sand)] md:translate-x-2 hidden [@media_(prefers-reduced-motion:_reduce)]:block"
-            priority
           />
         </div>
       </div>
