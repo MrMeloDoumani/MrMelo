@@ -110,7 +110,7 @@ function HKMPageContent() {
 
           <Suspense fallback={<div className="text-center py-12">Loading categories...</div>}>
             <CategoryGrid
-              userType="b2b"
+              userType="b2c"
               selectedCategories={[]}
               onCategorySelect={() => {}}
             />
