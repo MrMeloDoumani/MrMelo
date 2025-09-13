@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 // Helper function to get MIME type based on file extension
 const getVideoMimeType = (filename: string): string => {
   const extension = filename.split('.').pop()?.toLowerCase();
@@ -17,6 +19,48 @@ const getVideoMimeType = (filename: string): string => {
 };
 
 export default function HighlightsPage() {
+  // Video loading and error states - initialize all videos as loading
+  const [videoStates, setVideoStates] = useState<Record<string, { loading: boolean; error: boolean }>>({
+    'bulletin': { loading: true, error: false },
+    'creative-video-essay': { loading: true, error: false },
+    'foundernomics-song-commercial': { loading: true, error: false },
+    'mock-commercial-sahara': { loading: true, error: false },
+    'mock-podcast-tansweer': { loading: true, error: false },
+    'social-media-creation': { loading: true, error: false },
+    'testimonials': { loading: true, error: false }
+  });
+
+  const handleVideoLoad = (videoId: string) => {
+    setVideoStates(prev => ({
+      ...prev,
+      [videoId]: { loading: false, error: false }
+    }));
+  };
+
+  const handleVideoError = (videoId: string) => {
+    setVideoStates(prev => ({
+      ...prev,
+      [videoId]: { loading: false, error: true }
+    }));
+  };
+
+  // Set timeout for videos that don't load within 10 seconds
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setVideoStates(prev => {
+        const updated = { ...prev };
+        Object.keys(updated).forEach(videoId => {
+          if (updated[videoId].loading) {
+            updated[videoId] = { loading: false, error: true };
+          }
+        });
+        return updated;
+      });
+    }, 10000); // 10 second timeout
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   // Video highlights from the Video Highlights folder
   const videoHighlights = [
     {
@@ -98,11 +142,29 @@ export default function HighlightsPage() {
                   controls
                   preload="metadata"
                   poster={video.thumbnail}
-                  muted
+                  playsInline
+                  crossOrigin="anonymous"
+                  onLoadedData={() => handleVideoLoad(video.id)}
+                  onError={() => handleVideoError(video.id)}
                 >
                   <source src={video.src} type={getVideoMimeType(video.src)} />
                   Your browser does not support the video tag.
                 </video>
+
+                {/* Loading/Error states */}
+                {videoStates[video.id]?.loading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-t-xl">
+                    <div className="text-white text-sm">Loading video...</div>
+                  </div>
+                )}
+                {videoStates[video.id]?.error && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-red-900/50 rounded-t-xl">
+                    <div className="text-white text-sm text-center px-4">
+                      Video unavailable<br />
+                      <span className="text-xs opacity-75">Try refreshing the page</span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl" />
