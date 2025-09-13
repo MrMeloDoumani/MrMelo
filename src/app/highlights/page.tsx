@@ -1,3 +1,21 @@
+// Helper function to get MIME type based on file extension
+const getVideoMimeType = (filename: string): string => {
+  const extension = filename.split('.').pop()?.toLowerCase();
+  switch (extension) {
+    case 'mp4':
+    case 'm4v':
+      return 'video/mp4';
+    case 'mov':
+      return 'video/quicktime';
+    case 'webm':
+      return 'video/webm';
+    case 'avi':
+      return 'video/x-msvideo';
+    default:
+      return 'video/mp4'; // fallback
+  }
+};
+
 export default function HighlightsPage() {
   // Video highlights from the Video Highlights folder
   const videoHighlights = [
@@ -82,7 +100,7 @@ export default function HighlightsPage() {
                   poster={video.thumbnail}
                   muted
                 >
-                  <source src={video.src} type="video/mp4" />
+                  <source src={video.src} type={getVideoMimeType(video.src)} />
                   Your browser does not support the video tag.
                 </video>
 
