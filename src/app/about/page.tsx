@@ -27,9 +27,11 @@ export default function AboutPage() {
             </p>
 
             <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              What follows are reconstructed testimonials based on Melo&apos;s authentic voice and creative output.
-              These reflections honor both the sweetness of his wisdom and the saltiness of his uncompromising standards,
-              embracing the full spectrum of character in the spirit of radical transparency.
+              What follows are carefully selected quotes from thinkers whom Mr. Melo deeply respects for their mastery
+              of human understanding and philosophical insight. These voices resonate with aspects of his character and
+              creative journey. Additionally, this page serves as a standing invitation for Mr. Melo&apos;s ecosystem -
+              family, friends, colleagues, and creative peers - to contribute their authentic testimonials, creating
+              a living tapestry of how others experience his character as a thinker, observer, writer, producer, and fellow traveler.
             </p>
           </div>
 
@@ -89,12 +91,11 @@ export default function AboutPage() {
                 &ldquo;We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time.&rdquo;
               </blockquote>
 
-              <div className="mt-4 flex text-slate-400">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+              <div className="mt-4 p-3 bg-slate-900/10 rounded-lg border border-slate-500/20">
+                <p className="text-slate-200 text-sm italic">
+                  Eliot&apos;s vision of endless exploration and arriving at self-knowledge through experience captures
+                  Mr. Melo&apos;s philosophical journey of understanding the human condition through creative expression.
+                </p>
               </div>
             </div>
 
@@ -116,12 +117,11 @@ export default function AboutPage() {
                 most intense fulfillment. The heavier the burden, the closer our lives come to the earth, the more real and truthful they become.&rdquo;
               </blockquote>
 
-              <div className="mt-4 flex text-purple-400">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+              <div className="mt-4 p-3 bg-purple-900/10 rounded-lg border border-purple-500/20">
+                <p className="text-purple-200 text-sm italic">
+                  Kundera&apos;s meditation on the burdens that make us more real and truthful resonates with Mr. Melo&apos;s
+                  embrace of life&apos;s complexities and his commitment to authentic human experience over superficial comfort.
+                </p>
               </div>
             </div>
 
@@ -142,12 +142,11 @@ export default function AboutPage() {
                 is a revolutionary act. Freedom is the freedom to say that two plus two make four. If that is granted, all else follows.&rdquo;
               </blockquote>
 
-              <div className="mt-4 flex text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+              <div className="mt-4 p-3 bg-amber-900/10 rounded-lg border border-amber-500/20">
+                <p className="text-amber-200 text-sm italic">
+                  Orwell&apos;s revolutionary call for truth in deceitful times echoes Mr. Melo&apos;s commitment to
+                  intellectual honesty and his willingness to speak uncomfortable truths in service of clarity and understanding.
+                </p>
               </div>
             </div>
 
@@ -169,12 +168,66 @@ export default function AboutPage() {
                 original a mind, the more it will incline towards the religion of solitude.&rdquo;
               </blockquote>
 
-              <div className="mt-4 flex text-red-400">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+              <div className="mt-4 p-3 bg-red-900/10 rounded-lg border border-red-500/20">
+                <p className="text-red-200 text-sm italic">
+                  This quote captures Mr. Melo&apos;s relentless pursuit of truth and his willingness to challenge
+                  prevailing narratives, even when it makes him a solitary voice in the crowd.
+                </p>
+              </div>
+            </div>
+
+            {/* Fyodor Dostoevsky - Human Complexity & Redemption */}
+            <div className="group relative rounded-2xl bg-gradient-to-br from-amber-900/20 to-orange-900/20 border border-amber-500/30 p-8 hover:border-amber-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-amber-300 font-semibold text-lg">D</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-amber-200 font-semibold mb-1">Fyodor Dostoevsky</h3>
+                  <p className="text-amber-300/70 text-sm">Author of &ldquo;Crime and Punishment&rdquo;</p>
+                </div>
+              </div>
+
+              <blockquote className="text-gray-300 italic leading-relaxed">
+                &ldquo;To go wrong in one&apos;s own way is better than to go right in someone else&apos;s. In the first case
+                you are a man, in the second you&apos;re no better than a bird.&rdquo;
+              </blockquote>
+
+              <div className="mt-4 p-3 bg-amber-900/10 rounded-lg border border-amber-500/20">
+                <p className="text-amber-200 text-sm italic">
+                  Dostoevsky&apos;s exploration of human complexity and the redemptive power of authentic struggle
+                  mirrors Mr. Melo&apos;s commitment to genuine self-expression over performative success.
+                </p>
+              </div>
+            </div>
+
+            {/* William Shakespeare - The Thinking Mind */}
+            <div className="group relative rounded-2xl bg-gradient-to-br from-indigo-900/20 to-blue-900/20 border border-indigo-500/30 p-8 hover:border-indigo-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/10">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-indigo-300 font-semibold text-lg">S</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-indigo-200 font-semibold mb-1">William Shakespeare</h3>
+                  <p className="text-indigo-300/70 text-sm">Author of &ldquo;Julius Caesar&rdquo;</p>
+                </div>
+              </div>
+
+              <blockquote className="text-gray-300 italic leading-relaxed">
+                &ldquo;The fault, dear Brutus, is not in our stars, but in ourselves, that we are underlings.
+                Brutus and Caesar: What should be in that &lsquo;Caesar&rsquo;? Why should that name be sounded more than yours?
+                Write them together, yours is as fair a name; Sound them, it doth become the mouth as well;
+                Weigh them, it is as heavy; conjure with &lsquo;em, &lsquo;Brutus&rsquo; will start a spirit as soon as &lsquo;Caesar.&rsquo;
+                Now, in the names of all the gods at once, upon what meat doth this our Caesar feed, that he is grown so great?
+                Age, thou art sham&apos;d! Rome, thou hast lost the breed of noble bloods! For since the time of our great-grandfathers,
+                what man in Rome is so renowned for wisdom, courage, and for love, as Caesar is? He thinks too much: such men are dangerous.&rdquo;
+              </blockquote>
+
+              <div className="mt-4 p-3 bg-indigo-900/10 rounded-lg border border-indigo-500/20">
+                <p className="text-indigo-200 text-sm italic">
+                  Shakespeare&apos;s warning about thinkers who challenge the status quo resonates with Mr. Melo&apos;s
+                  role as a philosophical observer who questions prevailing narratives and societal constructs.
+                </p>
               </div>
             </div>
           </div>
