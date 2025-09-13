@@ -1,62 +1,54 @@
 export default function HighlightsPage() {
   // Video highlights from the Video Highlights folder
-  // When you add videos to /public/video-highlights/, update this array with their details
   const videoHighlights = [
     {
-      id: 'showreel-main',
-      title: 'Creative Showreel',
-      description: 'Comprehensive showcase of visual storytelling and multimedia production excellence',
-      src: '/video-highlights/showreel-main.mp4',
-      thumbnail: '/video-highlights/thumbnails/showreel-main.jpg'
+      id: 'bulletin',
+      title: 'Bulletin',
+      description: 'Dynamic bulletin-style presentation showcasing key messaging and brand communication',
+      src: '/video-highlights/Bulletin.mp4',
+      thumbnail: '/video-highlights/thumbnails/Bulletin.jpg'
     },
     {
-      id: 'brand-story',
-      title: 'Brand Storytelling',
-      description: 'Strategic narratives that connect brands with their audiences on a deeper level',
-      src: '/video-highlights/brand-story.mp4',
-      thumbnail: '/video-highlights/thumbnails/brand-story.jpg'
+      id: 'creative-video-essay',
+      title: 'Creative Video Essay',
+      description: 'Thought-provoking video essay exploring creative concepts and innovative storytelling',
+      src: '/video-highlights/Creative Video Essay.mp4',
+      thumbnail: '/video-highlights/thumbnails/Creative Video Essay.jpg'
     },
     {
-      id: 'product-showcase',
-      title: 'Product Showcase',
-      description: 'Elegant presentations that highlight product features and user experiences',
-      src: '/video-highlights/product-showcase.mp4',
-      thumbnail: '/video-highlights/thumbnails/product-showcase.jpg'
+      id: 'foundernomics-song-commercial',
+      title: 'Foundernomics Song Commercial',
+      description: 'Musical commercial for Foundernomics, blending business insights with engaging audio-visual content',
+      src: '/video-highlights/Foundernomics Song Commercial.mp4',
+      thumbnail: '/video-highlights/thumbnails/Foundernomics Song Commercial.jpg'
     },
     {
-      id: 'documentary-style',
-      title: 'Documentary Style',
-      description: 'Authentic storytelling that captures real moments and genuine narratives',
-      src: '/video-highlights/documentary-style.mp4',
-      thumbnail: '/video-highlights/thumbnails/documentary-style.jpg'
+      id: 'mock-commercial-tanweer',
+      title: 'Mock Commercial (Tanweer)',
+      description: 'Creative mock commercial demonstrating advertising concepts and brand storytelling',
+      src: '/video-highlights/Mock Commercial (Tanweer).mp4',
+      thumbnail: '/video-highlights/thumbnails/Mock Commercial (Tanweer).jpg'
     },
     {
-      id: 'motion-graphics',
-      title: 'Motion Graphics',
-      description: 'Dynamic visual communication that brings data and concepts to life',
-      src: '/video-highlights/motion-graphics.mp4',
-      thumbnail: '/video-highlights/thumbnails/motion-graphics.jpg'
+      id: 'mock-podcast-tansweer',
+      title: 'Mock Podcast (Tansweer)',
+      description: 'Engaging podcast-style content exploring business and entrepreneurial topics',
+      src: '/video-highlights/Mock Podcast (Tansweer).mp4',
+      thumbnail: '/video-highlights/thumbnails/Mock Podcast (Tansweer).jpg'
     },
     {
-      id: 'client-testimonial',
-      title: 'Client Success Stories',
-      description: 'Real results and testimonials from satisfied clients and partners',
-      src: '/video-highlights/client-testimonial.mp4',
-      thumbnail: '/video-highlights/thumbnails/client-testimonial.jpg'
+      id: 'social-media-creation',
+      title: 'Social Media Creation',
+      description: 'Professional social media content creation with voiceover and visual storytelling',
+      src: '/video-highlights/Social Media Creation Voiced.MOV',
+      thumbnail: '/video-highlights/thumbnails/Social Media Creation Voiced.jpg'
     },
     {
-      id: 'behind-scenes',
-      title: 'Behind the Scenes',
-      description: 'The creative process and production journey that brings projects to life',
-      src: '/video-highlights/behind-scenes.mp4',
-      thumbnail: '/video-highlights/thumbnails/behind-scenes.jpg'
-    },
-    {
-      id: 'portfolio-highlights',
-      title: 'Portfolio Highlights',
-      description: 'Curated selection of our finest work across various industries and formats',
-      src: '/video-highlights/portfolio-highlights.mp4',
-      thumbnail: '/video-highlights/thumbnails/portfolio-highlights.jpg'
+      id: 'testimonials',
+      title: 'Client Testimonials',
+      description: 'Authentic testimonials from satisfied clients sharing their success stories and experiences',
+      src: '/video-highlights/Testimonials.mp4',
+      thumbnail: '/video-highlights/thumbnails/Testimonials.jpg'
     }
   ];
 
