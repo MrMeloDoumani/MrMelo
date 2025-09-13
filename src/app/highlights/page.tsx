@@ -23,49 +23,49 @@ export default function HighlightsPage() {
       id: 'bulletin',
       title: 'Bulletin',
       description: 'Dynamic bulletin-style presentation showcasing key messaging and brand communication',
-      src: '/video-highlights/Bulletin.mp4',
+      src: 'https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Bulletin.mp4',
       thumbnail: '/video-highlights/thumbnails/Bulletin.jpg'
     },
     {
       id: 'creative-video-essay',
       title: 'Creative Video Essay',
       description: 'Thought-provoking video essay exploring creative concepts and innovative storytelling',
-      src: '/video-highlights/Creative Video Essay.mp4',
+      src: 'https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Creative%20Video%20Essay.mp4',
       thumbnail: '/video-highlights/thumbnails/Creative Video Essay.jpg'
     },
     {
       id: 'foundernomics-song-commercial',
       title: 'Foundernomics Song Commercial',
       description: 'Musical commercial for Foundernomics, blending business insights with engaging audio-visual content',
-      src: '/video-highlights/Foundernomics Song Commercial.mp4',
+      src: 'https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Foundernomics%20Song%20Commercial.mp4',
       thumbnail: '/video-highlights/thumbnails/Foundernomics Song Commercial.jpg'
     },
     {
       id: 'mock-commercial-sahara',
       title: 'Mock Commercial (Sahara)',
       description: 'Creative mock commercial demonstrating advertising concepts and brand storytelling',
-      src: '/video-highlights/Mock Commercial (Sahara).MP4',
+      src: 'https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Mock%20Commercial%20%28Sahara%29.MP4',
       thumbnail: '/video-highlights/thumbnails/Mock Commercial (Sahara).jpg'
     },
     {
       id: 'mock-podcast-tansweer',
       title: 'Mock Podcast (Tansweer)',
       description: 'Engaging podcast-style content exploring business and entrepreneurial topics',
-      src: '/video-highlights/Mock Podcast (Tansweer).mp4',
+      src: 'https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Mock%20Commercial%20%28Tanweer%29.mp4',
       thumbnail: '/video-highlights/thumbnails/Mock Podcast (Tansweer).jpg'
     },
     {
       id: 'social-media-creation',
       title: 'Social Media Creation',
       description: 'Professional social media content creation with voiceover and visual storytelling',
-      src: '/video-highlights/Social Media Creation Voiced.MOV',
+      src: 'https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Social%20Media%20Creation%20Voiced.MOV',
       thumbnail: '/video-highlights/thumbnails/Social Media Creation Voiced.jpg'
     },
     {
       id: 'testimonials',
       title: 'Client Testimonials',
       description: 'Authentic testimonials from satisfied clients sharing their success stories and experiences',
-      src: '/video-highlights/Testiomonials.MP4',
+      src: 'https://sgkqgi3mjft1jnni.public.blob.vercel-storage.com/Testiomonials.MP4',
       thumbnail: '/video-highlights/thumbnails/Testiomonials.jpg'
     }
   ];
