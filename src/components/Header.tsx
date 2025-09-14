@@ -8,8 +8,10 @@ const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/hkm", label: "Human Knowledge Model" },
   { href: "/highlights", label: "Highlights" },
   { href: "/packages", label: "Packages" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "info@mrmelo.com" },
 ];
 
