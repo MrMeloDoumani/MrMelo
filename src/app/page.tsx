@@ -80,7 +80,7 @@ export default function HomePage() {
               Who We Are
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
-              We are a comprehensive AI-powered media consulting service that combines human reasoning, critical thinking, and advanced AI tools to build complete digital solutions. From websites and chatbots to AI agents and premium media content, we leverage cutting-edge tools like ElevenLabs, Cursor, Runway ML, Revid.ai, Adobe Premiere Pro, and Midjourney. Given the tools at our disposal, there are no limits to creation—everything we execute for your business or personal brand is designed to match your identity, objectives, and vision.
+              We are a comprehensive AI-powered media consulting service that combines human reasoning, critical thinking, and advanced technology to build complete digital solutions. From websites and chatbots to AI agents and premium media content, we leverage cutting-edge tools and methodologies. Given the advanced capabilities at our disposal, there are no limits to creation—everything we execute for your business or personal brand is designed to match your identity, objectives, and vision.
             </p>
           </div>
         </section>
