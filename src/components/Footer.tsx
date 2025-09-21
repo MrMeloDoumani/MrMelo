@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="mt-16 border-t border-[color:var(--sand)]">
@@ -17,10 +19,13 @@ export default function Footer() {
             </a>
           </div>
           <div className="text-right">
-            <blockquote className="text-sm italic text-foreground/80">
-              &ldquo;Let&apos;s focus on replicating breakthrough ideas rather than just automating existing processes&rdquo;
-            </blockquote>
-            <p className="text-xs text-foreground/60 mt-1">- Mr. Melo</p>
+            <Image 
+              src="/logo/MrMelo_Logo_New.svg" 
+              alt="Mr.Melo - Practicing Media & Tech Innovation" 
+              width={150} 
+              height={60} 
+              className="h-10 w-auto mx-auto sm:mx-0 sm:ml-auto"
+            />
           </div>
         </div>
       </div>

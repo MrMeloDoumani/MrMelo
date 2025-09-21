@@ -16,9 +16,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-[color:var(--sand)]">                                                               
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-        <Link href="/" aria-label="Mr.Melo home" className="flex items-center gap-2">
-          <Image src="/logo/MrMelo_Monogram_Black.svg" alt="Mr.Melo monogram" width={28} height={28} priority className="md:hidden" />                                                                                  
-          <Image src="/logo/MrMelo_Wordmark_Black.svg" alt="Mr.Melo" width={112} height={24} priority className="hidden md:block" />                                                                                    
+        <Link href="/" aria-label="Mr.Melo home" className="flex items-center">
+          <Image src="/logo/MrMelo_Logo_New.svg" alt="Mr.Melo - Practicing Media & Tech Innovation" width={180} height={72} priority className="h-12 w-auto" />
         </Link>
         <nav className="flex items-center gap-6 text-sm">
           {nav.map((item) => {

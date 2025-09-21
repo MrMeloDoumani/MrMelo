@@ -1,0 +1,32 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="80" fill="black"/>
+  
+  <!-- Monitor Graphics -->
+  <g filter="url(#glow)">
+    <!-- Main Monitor -->
+    <rect x="10" y="15" width="25" height="18" stroke="white" stroke-width="1.5" fill="none" rx="2"/>
+    <rect x="12" y="17" width="21" height="14" stroke="white" stroke-width="1" fill="none" rx="1"/>
+    
+    <!-- Secondary Monitor -->
+    <rect x="8" y="25" width="20" height="15" stroke="white" stroke-width="1.5" fill="none" rx="2"/>
+    <rect x="10" y="27" width="16" height="11" stroke="white" stroke-width="1" fill="none" rx="1"/>
+  </g>
+  
+  <!-- Brand Name -->
+  <text x="50" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" filter="url(#glow)">mrmelo.com</text>
+  
+  <!-- Tagline -->
+  <text x="50" y="50" font-family="Arial, sans-serif" font-size="12" font-weight="300" fill="white" filter="url(#glow)">Practicing Media &amp; Tech Innovation</text>
+  
+  <!-- Glow Effect -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
