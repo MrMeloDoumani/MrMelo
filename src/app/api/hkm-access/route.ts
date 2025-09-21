@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     // Send email to info@mrmelo.com
     const emailData = await resend.emails.send({
-      from: 'noreply@mrmelo.com',
+      from: 'info@mrmelo.com',
       to: 'info@mrmelo.com',
       subject: `New HKM Access Request from ${firstName} ${lastName}`,
       html: `
@@ -50,8 +50,9 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Error sending HKM access request email:', error);
+    console.error('Error details:', JSON.stringify(error, null, 2));
     return NextResponse.json(
-      { error: 'Failed to submit HKM access request' },
+      { error: 'Failed to submit HKM access request', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
