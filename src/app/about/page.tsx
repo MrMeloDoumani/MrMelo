@@ -20,7 +20,7 @@ import { useState } from "react";
  *
  * Features:
  * - Mr. Melo's beliefs about business and relationships
- * - Content of Character link and Vimeo portfolio
+ * - Content of Character link and YouTube portfolio
  * - Customer support differentiator
  * - Who is Mr. Melo (bio)
  * - Ecosystem testimonial submission form
@@ -118,19 +118,19 @@ export default function AboutPage() {
                 </a>
               </div>
 
-              {/* Vimeo Portfolio */}
+              {/* YouTube Portfolio */}
               <div className="bg-slate-900/50 rounded-lg p-8 border border-slate-700/50">
                 <h3 className="text-2xl font-serif mb-4 text-amber-200">Creative Portfolio</h3>
                 <p className="text-gray-300 mb-4">
-                  See Mr. Melo&apos;s video work and creative productions that showcase his unique approach to storytelling and brand communication.
+                  Visit Mr. Melo&apos;s YouTube channel to see his video work and creative productions that showcase his unique approach to storytelling and brand communication.
                 </p>
                 <a
-                  href="https://vimeo.com/user/246053703/folder/26450648?isPrivate=true"
+                  href="https://youtube.com/@mrmelo.comPortfolio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors"
                 >
-                  View Vimeo Portfolio →
+                  View YouTube Portfolio →
                 </a>
               </div>
 
