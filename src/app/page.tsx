@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 /**
  * Home Page - Services & Main Landing
  *
@@ -16,52 +14,6 @@ import { useState } from "react";
  * Status: Production Ready
  */
 export default function HomePage() {
-  const [isSchedulingOpen, setIsSchedulingOpen] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    location: '',
-    company: ''
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      const response = await fetch('/api/schedule-meeting', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        // Reset after showing success
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setIsSchedulingOpen(false);
-          setFormData({
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            location: '',
-            company: ''
-          });
-        }, 3000);
-      } else {
-        alert('Failed to submit meeting request. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting meeting request:', error);
-      alert('Failed to submit meeting request. Please try again.');
-    }
-  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -165,120 +117,27 @@ export default function HomePage() {
                 Discuss your ambitions, visions, and goals with our team. We&apos;ll arrange a call or in-person meeting at your convenience.
               </p>
 
-              <button
-                onClick={() => setIsSchedulingOpen(true)}
-                className="bg-gradient-to-r from-amber-600 to-yellow-600 text-black px-8 py-4 rounded-lg font-semibold hover:from-amber-500 hover:to-yellow-500 transition-all duration-300 shadow-lg hover:shadow-amber-500/25"
-              >
-                Schedule Your Meeting
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="mailto:info@mrmelo.com?subject=Meeting Request&body=Hi, I'd like to schedule a meeting to discuss my project."
+                  className="bg-gradient-to-r from-amber-600 to-yellow-600 text-black px-8 py-4 rounded-lg font-semibold hover:from-amber-500 hover:to-yellow-500 transition-all duration-300 shadow-lg hover:shadow-amber-500/25 text-center"
+                >
+                  📧 Email Us
+                </a>
+                <a
+                  href="https://wa.me/971521204324?text=Hi, I'd like to schedule a meeting to discuss my project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-500 hover:to-green-400 transition-all duration-300 shadow-lg hover:shadow-green-500/25 text-center"
+                >
+                  💬 WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </section>
       </div>
 
-      {/* Scheduling Modal */}
-      {isSchedulingOpen && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50">
-          <div className="bg-slate-900 rounded-lg p-8 max-w-md w-full border border-slate-700">
-            {!isSubmitted ? (
-              <>
-                <h3 className="text-2xl font-serif mb-6 text-amber-200 text-center">Schedule Your Meeting</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">First Name</label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.firstName}
-                        onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                        className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:border-amber-500 focus:outline-none"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.lastName}
-                        onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                        className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:border-amber-500 focus:outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:border-amber-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:border-amber-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Location</label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.location}
-                      onChange={(e) => setFormData({...formData, location: e.target.value})}
-                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:border-amber-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Company</label>
-                    <input
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => setFormData({...formData, company: e.target.value})}
-                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:border-amber-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div className="flex gap-4 pt-4">
-                    <button
-                      type="button"
-                      onClick={() => setIsSchedulingOpen(false)}
-                      className="flex-1 bg-slate-700 text-white px-4 py-2 rounded-md hover:bg-slate-600 transition-colors"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="submit"
-                      className="flex-1 bg-gradient-to-r from-amber-600 to-yellow-600 text-black px-4 py-2 rounded-md font-semibold hover:from-amber-500 hover:to-yellow-500 transition-all"
-                    >
-                      Schedule Meeting
-                    </button>
-                  </div>
-                </form>
-              </>
-            ) : (
-              <div className="text-center">
-                <div className="text-6xl text-green-500 mb-4">✓</div>
-                <h3 className="text-2xl font-serif mb-4 text-green-400">Meeting Scheduled!</h3>
-                <p className="text-gray-300">
-                  Expect an email within 24 hours from our team to arrange a call or in-person meeting at your convenience.
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
