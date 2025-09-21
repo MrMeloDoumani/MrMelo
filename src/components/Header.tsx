@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -16,10 +15,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-[color:var(--sand)]">                                                               
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-        <Link href="/" aria-label="Mr.Melo home" className="flex items-center">
-          <Image src="/logo/MrMelo_Logo_New.svg" alt="Mr.Melo - Practicing Media & Tech Innovation" width={180} height={72} priority className="h-12 w-auto" />
+        <Link href="/" aria-label="Mr.Melo home" className="flex flex-col">
+          <span className="text-2xl md:text-3xl font-bold text-foreground">mrmelo.com</span>
+          <span className="text-xs md:text-sm text-foreground/70 font-light">Practicing Media & Tech Innovation</span>
         </Link>
-        <nav className="flex items-center gap-6 text-sm">
+        <nav className="flex items-center gap-3 sm:gap-6 text-sm">
           {nav.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -27,11 +27,14 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={
-                  "transition-colors hover:text-[color:var(--accent)]" +
-                  (isActive ? " text-[color:var(--accent)]" : " text-foreground/80")
+                  "transition-colors hover:text-[color:var(--accent)] px-2 py-1 rounded-md hover:bg-foreground/5" +
+                  (isActive ? " text-[color:var(--accent)] bg-foreground/10" : " text-foreground/80")
                 }
               >
-                {item.label}
+                <span className="hidden sm:inline">{item.label}</span>
+                <span className="sm:hidden">
+                  {item.label === "Human Knowledge Model" ? "HKM" : item.label}
+                </span>
               </Link>
             );
           })}

@@ -76,7 +76,7 @@ export default function HomePage() {
             </h2>
             <div className="text-center">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">
-                We deliver comprehensive AI-powered solutions including websites, chatbots, AI agents, and premium media content for both traditional and social media assets. We execute the visual and build the infrastructure so clients understand what you are offering and what you are about. Given the advanced AI tools at our disposal, there are no limits to creation—we bring any vision to digital reality, from simple media assets to complex AI-driven platforms.
+                We deliver comprehensive digital solutions including websites, chatbots, AI agents, and premium media content for both traditional and social media assets. We execute the visual and build the infrastructure so clients understand what you are offering and what you are about. There are no limits to creation—we bring any vision to digital reality, from simple media assets to complex AI-driven platforms.
               </p>
             </div>
           </div>

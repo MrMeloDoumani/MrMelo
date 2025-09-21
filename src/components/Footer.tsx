@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Footer() {
   return (
     <footer className="mt-16 border-t border-[color:var(--sand)]">
@@ -14,18 +12,20 @@ export default function Footer() {
         </div>
         <div className="sm:justify-self-end space-y-4">
           <div className="text-right">
-            <a href="mailto:info@mrmelo.com" className="text-sm hover:text-[color:var(--accent)] transition-colors">
-              info@mrmelo.com
-            </a>
-          </div>
-          <div className="text-right">
-            <Image 
-              src="/logo/MrMelo_Logo_New.svg" 
-              alt="Mr.Melo - Practicing Media & Tech Innovation" 
-              width={150} 
-              height={60} 
-              className="h-10 w-auto mx-auto sm:mx-0 sm:ml-auto"
-            />
+            <div className="flex flex-wrap justify-end gap-4 text-sm">
+              <a href="mailto:info@mrmelo.com" className="hover:text-[color:var(--accent)] transition-colors">
+                info@mrmelo.com
+              </a>
+              <a href="mailto:billing@mrmelo.com" className="hover:text-[color:var(--accent)] transition-colors">
+                billing@mrmelo.com
+              </a>
+              <a href="mailto:support@mrmelo.com" className="hover:text-[color:var(--accent)] transition-colors">
+                support@mrmelo.com
+              </a>
+              <a href="mailto:legal@mrmelo.com" className="hover:text-[color:var(--accent)] transition-colors">
+                legal@mrmelo.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
