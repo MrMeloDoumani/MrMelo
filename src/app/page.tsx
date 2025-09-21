@@ -6,11 +6,11 @@ import { useState } from "react";
  * Home Page - Services & Main Landing
  *
  * Features:
- * - Who we are (media consulting with human reasoning)
- * - What we do (media content delivery)
- * - Comparison table vs competitors
+ * - Who we are (comprehensive AI-powered media consulting with human reasoning)
+ * - What we do (websites, chatbots, AI agents, and premium media content)
+ * - Comparison table vs competitors (premium positioning at $2,500-$8,000)
  * - Scheduling CTA with popup form
- * - Mr. Melo quote
+ * - Mr. Melo quote ("no limits to creation" philosophy)
  *
  * Last Updated: September 21, 2025
  * Status: Production Ready
@@ -63,7 +63,7 @@ export default function HomePage() {
               Who We Are
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
-              We are a media consulting online service that uses human reasoning, critical thinking, a 5-step methodology, and AI tools for speed in delivery. Everything we execute for your business or personal brand is designed to match your identity, objectives, and vision.
+              We are a comprehensive AI-powered media consulting service that combines human reasoning, critical thinking, and advanced AI tools to build complete digital solutions. From websites and chatbots to AI agents and premium media content, we leverage cutting-edge tools like ElevenLabs, Cursor, Runway ML, Revid.ai, Adobe Premiere Pro, and Midjourney. Given the tools at our disposal, there are no limits to creation—everything we execute for your business or personal brand is designed to match your identity, objectives, and vision.
             </p>
           </div>
         </section>
@@ -76,7 +76,7 @@ export default function HomePage() {
             </h2>
             <div className="text-center">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">
-                We deliver media content for both traditional and social media assets. We execute the visual so clients understand what you are offering and what you are about. We bring your vision to visual representation.
+                We deliver comprehensive AI-powered solutions including websites, chatbots, AI agents, and premium media content for both traditional and social media assets. We execute the visual and build the infrastructure so clients understand what you are offering and what you are about. Given the advanced AI tools at our disposal, there are no limits to creation—we bring any vision to digital reality, from simple media assets to complex AI-driven platforms.
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function HomePage() {
                   </tr>
                   <tr>
                     <td className="px-6 py-4 font-medium text-gray-200">Price</td>
-                    <td className="px-6 py-4 text-center text-green-400 font-semibold">$500-$2,000</td>
+                    <td className="px-6 py-4 text-center text-green-400 font-semibold">$2,500-$8,000</td>
                     <td className="px-6 py-4 text-center text-red-400">$10,000-$50,000</td>
                     <td className="px-6 py-4 text-center text-red-400">$5,000-$15,000</td>
                     <td className="px-6 py-4 text-center text-green-400">$1,000-$3,000</td>
