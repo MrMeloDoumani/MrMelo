@@ -1,3 +1,17 @@
+/**
+ * Services Page - Content Creation & HKM Overview
+ *
+ * Features:
+ * - Content Creation & Strategy section (6 services)
+ * - Human Knowledge Model preview (16 knowledge domains)
+ * - Ethos-reflecting color palette (black/purple/gold/amber/crimson)
+ * - Dual conversion paths (HKM signup + content inquiries)
+ * - Premium design with gradient backgrounds
+ * - Mobile-responsive card layouts
+ *
+ * Last Updated: September 13, 2025
+ * Status: Production Live
+ */
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative">

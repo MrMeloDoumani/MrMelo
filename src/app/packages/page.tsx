@@ -1,3 +1,17 @@
+/**
+ * Packages Page - Premium Service Tiers
+ *
+ * Features:
+ * - 6 premium service tiers (Foundation, Professional, Executive)
+ * - Character-focused copy emphasizing intellectual depth
+ * - T.S. Eliot quote header ("We shall not cease from exploration...")
+ * - Professional card design with hover effects
+ * - Direct mailto links for inquiries
+ * - No pricing display (custom discussions)
+ *
+ * Last Updated: September 13, 2025
+ * Status: Production Live
+ */
 export default function PackagesPage() {
   return (
     <div className="min-h-screen bg-black text-white">
