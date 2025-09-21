@@ -105,11 +105,34 @@ export default function HKMPage() {
     }
   ];
 
-  const handleSignupSubmit = (e: React.FormEvent) => {
+  const handleSignupSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send to an API
-    alert('Thank you for your interest in the Human Knowledge Model! We will contact you soon.');
-    setShowSignupForm(false);
+    
+    try {
+      const response = await fetch('/api/hkm-access', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Thank you for your interest in the Human Knowledge Model! We will contact you soon.');
+        setShowSignupForm(false);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          categories: []
+        });
+      } else {
+        alert('Failed to submit HKM access request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting HKM access request:', error);
+      alert('Failed to submit HKM access request. Please try again.');
+    }
   };
 
   return (

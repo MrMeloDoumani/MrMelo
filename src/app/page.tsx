@@ -27,23 +27,40 @@ export default function HomePage() {
     company: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send to an API
-    setIsSubmitted(true);
-    // Reset after showing success
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setIsSchedulingOpen(false);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        location: '',
-        company: ''
+    
+    try {
+      const response = await fetch('/api/schedule-meeting', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset after showing success
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setIsSchedulingOpen(false);
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            location: '',
+            company: ''
+          });
+        }, 3000);
+      } else {
+        alert('Failed to submit meeting request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting meeting request:', error);
+      alert('Failed to submit meeting request. Please try again.');
+    }
   };
 
   return (
