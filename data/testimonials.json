@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "profession": "CEO",
+    "company": "TechStart Inc.",
+    "relationship": "client",
+    "comment": "Mr. Melo's approach to business transcends traditional consulting. His emphasis on character-first relationships has transformed how we build partnerships. The depth of insight he provides isn't just strategic—it's fundamentally human.",
+    "createdAt": "2025-01-26T10:00:00.000Z",
+    "isApproved": true
+  }
+]

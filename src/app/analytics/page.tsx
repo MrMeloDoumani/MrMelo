@@ -19,8 +19,8 @@ const analyticsData = {
     completionRate: 57.1,
   },
   aiUsage: {
-    totalRequests: 1,247,
-    successfulRequests: 1,198,
+    totalRequests: 1247,
+    successfulRequests: 1198,
     failedRequests: 49,
     averageResponseTime: "2.3s",
     mostUsedFeature: "Content Generation",
