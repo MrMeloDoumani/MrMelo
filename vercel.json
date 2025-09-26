@@ -1,5 +1,5 @@
 {
-  "name": "e-gtm-director-portal-demo",
+  "name": "mrmelo-testimonials",
   "version": 2,
   "builds": [
     {
@@ -12,5 +12,10 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  }
 }
