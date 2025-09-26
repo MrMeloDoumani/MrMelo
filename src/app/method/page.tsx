@@ -183,7 +183,10 @@ export default function MethodPage() {
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className={`p-2 rounded-lg ${templateTypes[template.type].color}`}>
-                    <templateTypes[template.type].icon className="h-5 w-5" />
+                    {(() => {
+                      const IconComponent = templateTypes[template.type].icon;
+                      return <IconComponent className="h-5 w-5" />;
+                    })()}
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">{template.name}</h3>
