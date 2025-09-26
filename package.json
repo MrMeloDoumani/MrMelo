@@ -1,6 +1,7 @@
 {
-  "name": "mrmelo",
-  "version": "0.1.0",
+  "name": "e-gtm-director-portal-demo",
+  "version": "1.0.0",
+  "description": "AI-powered Go-To-Market Director Portal for e& (Etisalat)",
   "private": true,
   "scripts": {
     "dev": "next dev",

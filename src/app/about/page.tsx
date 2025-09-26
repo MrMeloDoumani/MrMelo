@@ -13,7 +13,20 @@
  */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface Testimonial {
+  id: number;
+  firstName: string;
+  lastName: string;
+  profession: string;
+  company: string | null;
+  relationship: string;
+  comment: string;
+  createdAt: string;
+  updatedAt: string;
+  isApproved: boolean;
+}
 
 /**
  * About Page - Mr. Melo's Philosophy & Character
@@ -30,16 +43,9 @@ import { useState } from "react";
  * Status: Production Ready
  */
 export default function AboutPage() {
-  const [testimonials, setTestimonials] = useState([
-    {
-      id: 1,
-      firstName: "Sarah",
-      profession: "CEO",
-      company: "TechStart Inc.",
-      comment: "Mr. Melo's approach to business transcends traditional consulting. His emphasis on character-first relationships has transformed how we build partnerships. The depth of insight he provides isn't just strategic—it's fundamentally human."
-    }
-  ]);
-
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -50,25 +56,90 @@ export default function AboutPage() {
     comment: ''
   });
 
-  const handleTestimonialSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const newTestimonial = {
-      id: testimonials.length + 1,
-      firstName: formData.firstName,
-      profession: formData.profession,
-      company: formData.company,
-      comment: formData.comment
+  // Fetch testimonials from API
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch('/api/testimonials');
+        if (response.ok) {
+          const data = await response.json();
+          setTestimonials(data);
+        } else {
+          console.error('Failed to fetch testimonials');
+          // Fallback to default testimonial if API fails
+          setTestimonials([{
+            id: 1,
+            firstName: "Sarah",
+            lastName: "Johnson",
+            profession: "CEO",
+            company: "TechStart Inc.",
+            relationship: "client",
+            comment: "Mr. Melo's approach to business transcends traditional consulting. His emphasis on character-first relationships has transformed how we build partnerships. The depth of insight he provides isn't just strategic—it's fundamentally human.",
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            isApproved: true
+          }]);
+        }
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+        // Fallback to default testimonial
+        setTestimonials([{
+          id: 1,
+          firstName: "Sarah",
+          lastName: "Johnson",
+          profession: "CEO",
+          company: "TechStart Inc.",
+          relationship: "client",
+          comment: "Mr. Melo's approach to business transcends traditional consulting. His emphasis on character-first relationships has transformed how we build partnerships. The depth of insight he provides isn't just strategic—it's fundamentally human.",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          isApproved: true
+        }]);
+      } finally {
+        setLoading(false);
+      }
     };
-    setTestimonials([...testimonials, newTestimonial]);
-    setShowForm(false);
-    setFormData({
-      firstName: '',
-      lastName: '',
-      profession: '',
-      company: '',
-      relationship: '',
-      comment: ''
-    });
+
+    fetchTestimonials();
+  }, []);
+
+  const handleTestimonialSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/testimonials', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        const newTestimonial = await response.json();
+        setTestimonials([newTestimonial, ...testimonials]);
+        setShowForm(false);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          profession: '',
+          company: '',
+          relationship: '',
+          comment: ''
+        });
+        alert('Thank you for sharing your thoughts! Your testimonial has been added.');
+      } else {
+        const error = await response.json();
+        alert('Failed to submit testimonial. Please try again.');
+        console.error('Error submitting testimonial:', error);
+      }
+    } catch (error) {
+      console.error('Error submitting testimonial:', error);
+      alert('Failed to submit testimonial. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -175,16 +246,27 @@ export default function AboutPage() {
 
             {/* Display Testimonials */}
             <div className="space-y-6 mb-12">
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="bg-slate-900/50 rounded-lg p-6 border border-slate-700/50">
-                  <blockquote className="text-gray-300 italic text-lg leading-relaxed mb-4">
-                    &ldquo;{testimonial.comment}&rdquo;
-                  </blockquote>
-                  <div className="text-amber-200 font-medium">
-                    — {testimonial.firstName}, {testimonial.profession} at {testimonial.company}
-                  </div>
+              {loading ? (
+                <div className="text-center py-8">
+                  <div className="text-gray-400">Loading testimonials...</div>
                 </div>
-              ))}
+              ) : testimonials.length === 0 ? (
+                <div className="text-center py-8">
+                  <div className="text-gray-400">No testimonials yet. Be the first to share your thoughts!</div>
+                </div>
+              ) : (
+                testimonials.map((testimonial) => (
+                  <div key={testimonial.id} className="bg-slate-900/50 rounded-lg p-6 border border-slate-700/50">
+                    <blockquote className="text-gray-300 italic text-lg leading-relaxed mb-4">
+                      &ldquo;{testimonial.comment}&rdquo;
+                    </blockquote>
+                    <div className="text-amber-200 font-medium">
+                      — {testimonial.firstName} {testimonial.lastName}, {testimonial.profession}
+                      {testimonial.company && ` at ${testimonial.company}`}
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
 
             {/* Add Testimonial Button */}
@@ -197,7 +279,7 @@ export default function AboutPage() {
               </button>
             </div>
           </div>
-        </section>
+    </section>
       </div>
 
       {/* Testimonial Form Modal */}
@@ -290,9 +372,10 @@ export default function AboutPage() {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-gradient-to-r from-amber-600 to-yellow-600 text-black px-4 py-2 rounded-md font-semibold hover:from-amber-500 hover:to-yellow-500 transition-all"
+                  disabled={submitting}
+                  className="flex-1 bg-gradient-to-r from-amber-600 to-yellow-600 text-black px-4 py-2 rounded-md font-semibold hover:from-amber-500 hover:to-yellow-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Share Testimonial
+                  {submitting ? 'Sharing...' : 'Share Testimonial'}
                 </button>
               </div>
             </form>

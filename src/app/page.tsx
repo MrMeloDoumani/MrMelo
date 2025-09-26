@@ -1,143 +1,247 @@
 "use client";
 
-/**
- * Home Page - Services & Main Landing
- *
- * Features:
- * - Who we are (comprehensive AI-powered media consulting with human reasoning)
- * - What we do (websites, chatbots, AI agents, and premium media content)
- * - Comparison table vs competitors (premium positioning at $2,500-$8,000)
- * - Scheduling CTA with popup form
- * - Mr. Melo quote ("no limits to creation" philosophy)
- *
- * Last Updated: September 21, 2025
- * Status: Production Ready
- */
+import { useState } from "react";
+import { ChevronRight, Users, Brain, Calendar, BarChart3, FileText } from "lucide-react";
+import Link from "next/link";
+
+interface TeamMember {
+  id: string;
+  name: string;
+  initials: string;
+  role: string;
+  roleColor: string;
+  responsibilities: string[];
+  status: "available" | "coming-soon";
+  hasAI: boolean;
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    id: "yasser",
+    name: "Yasser Omar Zaki Shaaban",
+    initials: "YS",
+    role: "DIRECTOR",
+    roleColor: "bg-gray-800 text-white",
+    responsibilities: ["Strategic Planning", "Market Analysis"],
+    status: "available",
+    hasAI: true,
+  },
+  {
+    id: "elham",
+    name: "Elham Husain Al Hammadi",
+    initials: "EH",
+    role: "SENIOR MANAGER",
+    roleColor: "bg-purple-100 text-purple-800",
+    responsibilities: ["Enterprise Sales", "Solution Architecture"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+  {
+    id: "fawzia",
+    name: "Fawzia Abdalla",
+    initials: "FA",
+    role: "SENIOR MANAGER",
+    roleColor: "bg-purple-100 text-purple-800",
+    responsibilities: ["Digital Transformation", "Customer Success"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+  {
+    id: "khalid",
+    name: "Khalid Riyad Badah",
+    initials: "KB",
+    role: "SENIOR MANAGER",
+    roleColor: "bg-purple-100 text-purple-800",
+    responsibilities: ["Technical Solutions", "Product Management"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+  {
+    id: "stela",
+    name: "Stela Paneva",
+    initials: "SP",
+    role: "SENIOR MANAGER",
+    roleColor: "bg-purple-100 text-purple-800",
+    responsibilities: ["Marketing Strategy", "Brand Management"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+  {
+    id: "fadhal",
+    name: "Fadhal Abdul Majeed",
+    initials: "FM",
+    role: "MANAGER",
+    roleColor: "bg-blue-100 text-blue-800",
+    responsibilities: ["Operations Management", "Process Optimization"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+  {
+    id: "lina",
+    name: "Lina Owis",
+    initials: "LO",
+    role: "MANAGER",
+    roleColor: "bg-blue-100 text-blue-800",
+    responsibilities: ["Account Management", "Customer Relations"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+  {
+    id: "sara",
+    name: "Sara Mostafa",
+    initials: "SM",
+    role: "MANAGER",
+    roleColor: "bg-blue-100 text-blue-800",
+    responsibilities: ["Project Coordination", "Team Management"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+  {
+    id: "mohammad",
+    name: "Mohammad Malkawi",
+    initials: "MM",
+    role: "SPECIALIST",
+    roleColor: "bg-green-100 text-green-800",
+    responsibilities: ["Technical Support", "Implementation"],
+    status: "coming-soon",
+    hasAI: false,
+  },
+];
+
+const navigation = [
+  { name: "Agents", href: "/agents", icon: Brain },
+  { name: "e& Website", href: "https://www.etisalat.ae/en/business", icon: ChevronRight, external: true },
+  { name: "Planner", href: "/planner", icon: Calendar },
+  { name: "Melo Method", href: "/method", icon: FileText },
+  { name: "Analytics", href: "/analytics", icon: BarChart3 },
+];
+
 export default function HomePage() {
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+
+  const handleMemberClick = (member: TeamMember) => {
+    if (member.status === "available") {
+      setSelectedMember(member);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(147, 51, 234, 0.08) 0%, transparent 50%)`,
-        }} />
-      </div>
-
-      <div className="relative z-10">
-        {/* Hero Section - Who We Are */}
-        <section className="px-6 py-20 md:py-32">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-6xl font-serif mb-8 bg-gradient-to-r from-amber-100 via-yellow-200 to-amber-300 bg-clip-text text-transparent">
-              Who We Are
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
-              We are a comprehensive AI-powered media consulting service that combines human reasoning, critical thinking, and advanced technology to build complete digital solutions. From websites and chatbots to AI agents and premium media content, we leverage cutting-edge tools and methodologies. Given the advanced capabilities at our disposal, there are no limits to creation—everything we execute for your business or personal brand is designed to match your identity, objectives, and vision.
-            </p>
-          </div>
-        </section>
-
-        {/* What We Do Section */}
-        <section className="px-6 py-20 bg-slate-900/20">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-serif mb-8 text-center bg-gradient-to-r from-amber-100 via-yellow-200 to-amber-300 bg-clip-text text-transparent">
-              What We Do
-            </h2>
-            <div className="text-center">
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">
-                We deliver comprehensive digital solutions including websites, chatbots, AI agents, and premium media content for both traditional and social media assets. We execute the visual and build the infrastructure so clients understand what you are offering and what you are about. There are no limits to creation—we bring any vision to digital reality, from simple media assets to complex AI-driven platforms.
-              </p>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="border-b border-gray-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <h1 className="text-xl font-bold text-gray-900">e& GTM Director Portal</h1>
+                <p className="text-sm text-gray-500">This project was created by mrmelo.com</p>
+              </div>
             </div>
-          </div>
-        </section>
-
-        {/* Comparison Table Section */}
-        <section className="px-6 py-20">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-4xl md:text-5xl font-serif mb-12 text-center bg-gradient-to-r from-amber-100 via-yellow-200 to-amber-300 bg-clip-text text-transparent">
-              What Separates Us
-            </h2>
-
-            <div className="overflow-x-auto">
-              <table className="w-full bg-slate-900/50 rounded-lg border border-slate-700/50">
-                <thead>
-                  <tr className="border-b border-slate-700/50">
-                    <th className="px-6 py-4 text-left text-lg font-serif text-amber-200">Criteria</th>
-                    <th className="px-6 py-4 text-center text-lg font-serif bg-gradient-to-r from-amber-100 via-yellow-200 to-amber-300 bg-clip-text text-transparent">MrMelo.com</th>
-                    <th className="px-6 py-4 text-center text-lg font-serif text-indigo-200">Global Top-Tier Agency</th>
-                    <th className="px-6 py-4 text-center text-lg font-serif text-purple-200">Mid-Tier Agency</th>
-                    <th className="px-6 py-4 text-center text-lg font-serif text-slate-200">Small-Tier Agency</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-slate-700/30">
-                    <td className="px-6 py-4 font-medium text-gray-200">Media Asset Quality</td>
-                    <td className="px-6 py-4 text-center text-green-400 font-semibold">Exceptional</td>
-                    <td className="px-6 py-4 text-center text-green-400 font-semibold">Exceptional</td>
-                    <td className="px-6 py-4 text-center text-yellow-400">Good</td>
-                    <td className="px-6 py-4 text-center text-red-400">Basic</td>
-                  </tr>
-                  <tr className="border-b border-slate-700/30">
-                    <td className="px-6 py-4 font-medium text-gray-200">Delivery Time</td>
-                    <td className="px-6 py-4 text-center text-green-400 font-semibold">2-5 days</td>
-                    <td className="px-6 py-4 text-center text-yellow-400">1-3 weeks</td>
-                    <td className="px-6 py-4 text-center text-yellow-400">2-4 weeks</td>
-                    <td className="px-6 py-4 text-center text-red-400">1-2 months</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-medium text-gray-200">Price</td>
-                    <td className="px-6 py-4 text-center text-green-400 font-semibold">$2,500-$8,000</td>
-                    <td className="px-6 py-4 text-center text-red-400">$10,000-$50,000</td>
-                    <td className="px-6 py-4 text-center text-red-400">$5,000-$15,000</td>
-                    <td className="px-6 py-4 text-center text-green-400">$1,000-$3,000</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8 text-center">
-              <p className="text-gray-300 text-sm italic">
-                *Comparison based on industry benchmarks and client feedback from verified sources
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="px-6 py-20 bg-slate-900/20">
-          <div className="mx-auto max-w-4xl text-center">
-            <blockquote className="text-2xl md:text-3xl font-serif italic text-amber-200 mb-8">
-              &ldquo;Let&apos;s focus on replicating breakthrough ideas rather than just automating existing processes&rdquo;
-            </blockquote>
-            <p className="text-lg text-gray-300 mb-8">- Mr. Melo</p>
-
-            <div className="bg-slate-900/50 rounded-lg p-8 border border-slate-700/50">
-              <h3 className="text-2xl font-serif mb-4 text-amber-200">Schedule a Meeting</h3>
-              <p className="text-gray-300 mb-6">
-                Discuss your ambitions, visions, and goals with our team. We&apos;ll arrange a call or in-person meeting at your convenience.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:info@mrmelo.com?subject=Meeting Request&body=Hi, I'd like to schedule a meeting to discuss my project."
-                  className="bg-gradient-to-r from-amber-600 to-yellow-600 text-black px-8 py-4 rounded-lg font-semibold hover:from-amber-500 hover:to-yellow-500 transition-all duration-300 shadow-lg hover:shadow-amber-500/25 text-center"
+            
+            {/* Navigation */}
+            <nav className="hidden md:flex space-x-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
-                  📧 Email Us
-                </a>
-                <a
-                  href="https://wa.me/971521204324?text=Hi, I'd like to schedule a meeting to discuss my project."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-500 hover:to-green-400 transition-all duration-300 shadow-lg hover:shadow-green-500/25 text-center"
-                >
-                  💬 WhatsApp
-                </a>
+                  <item.icon className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+            </nav>
+
+            {/* User Profile */}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <div className="h-8 w-8 rounded-full bg-gray-600 flex items-center justify-center">
+                  <span className="text-xs font-medium text-white">YS</span>
+                </div>
+                <div className="hidden sm:block">
+                  <p className="text-sm font-medium text-gray-900">Yasser Omar Zaki Shaaban</p>
+                  <p className="text-xs text-gray-500">DIRECTOR</p>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </header>
 
+      {/* Main Content */}
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">GTM Team Directory</h2>
+          <p className="text-gray-600">Select a team member to access their AI assistant for specialized support.</p>
+        </div>
+
+        {/* Team Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {teamMembers.map((member) => (
+            <div
+              key={member.id}
+              onClick={() => handleMemberClick(member)}
+              className={`bg-white rounded-lg border border-gray-200 p-6 cursor-pointer transition-all duration-200 hover:shadow-md ${
+                member.status === "available" 
+                  ? "hover:border-blue-300 hover:shadow-lg" 
+                  : "opacity-75 cursor-not-allowed"
+              }`}
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center">
+                    <span className="text-sm font-medium text-gray-600">{member.initials}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900 text-sm">{member.name}</h3>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${member.roleColor}`}>
+                      {member.role}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <p className="text-sm text-gray-600 mb-2">Responsibilities:</p>
+                <div className="flex flex-wrap gap-1">
+                  {member.responsibilities.map((resp, index) => (
+                    <span
+                      key={index}
+                      className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-gray-100 text-gray-700"
+                    >
+                      {resp}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <span
+                  className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                    member.status === "available"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-gray-100 text-gray-600"
+                  }`}
+                >
+                  {member.status === "available" ? "AI AVAILABLE" : "COMING SOON"}
+                </span>
+                {member.status === "available" && (
+                  <ChevronRight className="h-4 w-4 text-gray-400" />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="mt-16 border-t border-gray-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+          <p className="text-center text-sm text-gray-500">Created by mrmelo.com</p>
+        </div>
+      </footer>
     </div>
   );
 }

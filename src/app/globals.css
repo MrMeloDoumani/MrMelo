@@ -1,125 +1,55 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #fcfcfb;
-  --foreground: #121212;
-  --accent: #0e8e88; /* oasis teal */
-  --accent-contrast: #ffffff;
-  --sand: #e9e3d8; /* soft sand tone */
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-sand: var(--sand);
-  --font-sans: var(--font-body);
-  --font-serif: var(--font-heading);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0b0b0b;
-    --foreground: #ededed;
-    --accent: #b31d2c; /* deep red in dark mode */
-    --sand: #3a3530;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
   }
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-/* Typography mapping: serif for headings, humanist sans for body */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  letter-spacing: -0.01em;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-body, p, a, li, input, textarea, button {
-  font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Noto Sans", sans-serif;
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
 }
 
-/* Subtle cultural motif as an ultra-light geometric pattern */
-.motif-overlay {
-  position: relative;
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
-
-.motif-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--foreground) 5%, transparent), transparent 2px),
-    linear-gradient(to right, transparent 0, transparent 100%),
-    linear-gradient(to bottom, transparent 0, transparent 100%);
-  background-size: 24px 24px, 100% 100%, 100% 100%;
-  opacity: 0.04; /* less than 5% perceived */
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.3) 30%, rgba(0,0,0,.1));
-}
-
-/* Utility for sand dividers */
-.divider-sand {
-  background-color: var(--sand);
-}
-
-/* Hero fade and vignette helpers */
-.fade-bottom {
-  position: relative;
-}
-
-.fade-bottom::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 35%;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,1) 100%);
-}
-
-/* Animated accent divider */
-.divider-animate {
-  height: 1px;
-  background: var(--accent);
-  width: 0;
-  animation: divider-grow 900ms ease-out forwards;
-}
-
-@keyframes divider-grow {
-  from { width: 0; opacity: 0; }
-  to { width: 10rem; opacity: 1; }
-}
-
-/* Subtle icon hover */
-.icon-card {
-  transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
-}
-.icon-card:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in oklab, var(--accent) 50%, var(--sand));
-}
-.icon {
-  transition: transform 200ms ease, color 200ms ease;
-}
-.icon-card:hover .icon { transform: scale(1.05); color: var(--accent); }
-
-/* Button ripple hover */
-.btn-ripple { position: relative; overflow: hidden; isolation: isolate; }
-.btn-ripple::after {
-  content: "";
-  position: absolute; inset: 0; margin: auto; width: 10px; height: 10px;
-  border-radius: 9999px; background: currentColor; opacity: 0; transform: scale(1);
-  transition: transform 450ms ease, opacity 450ms ease;
-  pointer-events: none; filter: blur(6px);
-}
-.btn-ripple:hover::after { opacity: .18; transform: scale(40); }

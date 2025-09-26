@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# e& GTM Director Portal
 
-## Getting Started
+An AI-powered Go-To-Market Director Portal for e& (Etisalat), designed to enhance sales enablement and strategic planning capabilities.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🤖 AI Sales Enablement Assistant
+- **Content Generation**: Create product brochures, white papers, case studies, and more
+- **Industry-Specific**: Tailored content for retail, education, telco, tech, and all business sectors
+- **Knowledge Base**: Upload and learn from corporate documents and materials
+- **Conversational Interface**: Natural language interaction with corporate personality
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 👥 Team Directory
+- **9 Team Members**: Complete GTM team with roles and responsibilities
+- **AI Availability**: Real-time status of AI assistant availability
+- **Role-Based Access**: Director, Senior Managers, Managers, and Specialists
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📋 Project Planner
+- **Drag & Drop**: Intuitive Kanban board for project management
+- **Task Tracking**: Assign owners, due dates, and priorities
+- **Milestones**: Flag key dates and important deliverables
+- **Status Updates**: Real-time project status tracking
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📊 Analytics Dashboard
+- **Usage Metrics**: Login statistics, session tracking, and performance data
+- **Task Analytics**: Completion rates, overdue tasks, and team activity
+- **AI Performance**: Request success rates and response times
+- **Team Activity**: Individual team member usage and engagement
 
-## Learn More
+### 📝 Melo Method
+- **Copywriting Templates**: EDM, SMS, brochures, flyers, and white papers
+- **Industry-Specific**: Mood words and language tailored to different sectors
+- **Template Library**: Pre-built templates for common business communications
+- **How-to Guide**: Step-by-step process for content creation
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Technology Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI + Lucide React
+- **Animations**: Framer Motion
+- **Deployment**: Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/MrMeloDoumani/FinalAgentGTM4Demo.git
+   cd FinalAgentGTM4Demo
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📱 Pages
+
+- **Home** (`/`) - Team directory and navigation
+- **Agents** (`/agents`) - AI chat interface
+- **Planner** (`/planner`) - Project management board
+- **Analytics** (`/analytics`) - Usage and performance metrics
+- **Melo Method** (`/method`) - Copywriting templates
+
+## 🎯 Key Features
+
+### AI Assistant Capabilities
+- Generate marketing assets and sales materials
+- Ask clarifying questions for better content
+- Learn from uploaded documents
+- Provide industry-specific recommendations
+- Support for multiple file formats (PDF, DOC, TXT, images)
+
+### Project Management
+- Visual Kanban board with drag-and-drop
+- Task assignment and due date tracking
+- Priority levels and milestone flagging
+- Real-time status updates
+- Team workload management
+
+### Knowledge Base
+- File upload and storage
+- Document learning and retrieval
+- Industry-specific content libraries
+- Expert-curated knowledge sources
+- Corporate B2B focus
+
+## 🔒 Security
+
+- Password-protected AI agent access
+- Corporate security integration ready
+- Secure file handling and storage
+- User authentication and authorization
+
+## 📈 Analytics
+
+- Comprehensive usage tracking
+- Performance metrics and reporting
+- Team activity monitoring
+- AI request success rates
+- Task completion analytics
+
+## 🌐 Deployment
+
+The application is deployed on Vercel and accessible at:
+- **Production URL**: https://thedemo4gtm-iah0j1bhn-mrmelos-projects.vercel.app
+- **Custom Domain**: https://e-gtm-demo-final.vercel.app
+- **Vercel Dashboard**: https://vercel.com/mrmelos-projects/thedemo4gtm
+
+### Deployment Features:
+- Automatic builds and deployments
+- Environment variable configuration
+- CDN distribution
+- SSL certificate management
+- Custom domain support
+
+## 👨‍💻 Created by
+
+This project was created by [mrmelo.com](https://mrmelo.com) for e& (Etisalat) GTM team.
+
+## 📄 License
+
+Private project for e& (Etisalat) internal use.
